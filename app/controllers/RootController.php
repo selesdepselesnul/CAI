@@ -9,7 +9,7 @@ class RootController
         $this->f3 = Base::instance();
     }
 
-    public function indexOrElse($func)
+    private function indexOrElse($func)
     {
         if ($this->f3->get('COOKIE["isLoggin"]') == 'true')
             echo \Template::instance()->render('index.html');
@@ -45,9 +45,13 @@ class RootController
         $admin = new Admin($db);
         $username = $this->f3->get('POST["username"]');
         $password = $this->f3->get('POST["password"]');
+        $isRemembered = $this->f3->get('POST["rememberCheckbox"]');
 
-        if($admin->password == $password)
+        if($admin->password == $password) {
+            if ($isRemembered == "on")
+                setcookie('isLoggin', 'true');
             $this->f3->reroute('/');
+        }
         
     }
 }
