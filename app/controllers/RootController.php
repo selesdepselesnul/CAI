@@ -9,17 +9,29 @@ class RootController
         $this->f3 = Base::instance();
     }
 
+    public function indexOrElse($func)
+    {
+        if ($this->f3->get('COOKIE["isLoggin"]') == 'true')
+            echo \Template::instance()->render('index.html');
+        else
+            $func();
+    }
+
     public function index()
     {
-        
-        echo "index page";
-        // if ($this->f3->get('COOKIE["isLoggin"]') == 'no')
-        //     $this->f3->reroute('login/');
+        $this->indexOrElse(function() {
+            $this->f3->reroute('login/');
+        });    
+    
     }
+
 
     public function login()
     {
-        echo \Template::instance()->render('login.htm');
+        $this->indexOrElse(function() {
+            echo \Template::instance()->render('login.html');
+        });
+        
     }
 
     public function postLogin()
