@@ -2,23 +2,20 @@
 /**
  *@author : Moch Deden (https://github.com/selesdepselesnul)
  */
-class RootController
-{
-    public function __construct()
-    {
+class RootController {
+    
+    public function __construct() {
         $this->f3 = Base::instance();
     }
 
-    private function indexOrElse($func)
-    {
+    private function indexOrElse($func) {
         if ($this->f3->get('COOKIE["isLoggin"]') == 'true')
             echo \Template::instance()->render('index.html');
         else
             $func();
     }
 
-    public function index()
-    {
+    public function index() {
         $this->indexOrElse(function() {
             $this->f3->reroute('login/');
         });    
@@ -26,16 +23,14 @@ class RootController
     }
 
 
-    public function login()
-    {
+    public function login() {
         $this->indexOrElse(function() {
             echo \Template::instance()->render('login.html');
         });
         
     }
 
-    public function postLogin()
-    {
+    public function postLogin() {
         $db = new DB\SQL(
             $this->f3->get('db.dns'),
             $this->f3->get('db.user'),
