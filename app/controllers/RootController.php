@@ -26,7 +26,7 @@ class RootController {
             $this->f3->get('db.dns'),
             $this->f3->get('db.user'),
             $this->f3->get('db.password')
-            );
+        );
 
         $this->renderIndexOrElse(function() {
             echo \Template::instance()->render('login.html');
@@ -38,23 +38,23 @@ class RootController {
     }
 
     public function postLogin() {
-       $admin = new Admin(new DB\SQL(
+        $admin = new Admin(new DB\SQL(
            $this->f3->get('db.dns'),
            $this->f3->get('db.user'),
            $this->f3->get('db.password')
         ));
 
-       $username = $this->f3->get('POST["username"]');
-       $password = $this->f3->get('POST["password"]');
-       $isRemembered = $this->f3->get('POST["rememberCheckbox"]');
-       $auth = new \Auth($admin, ['id'=>'username', 'pw'=>'password']);
+        $username = $this->f3->get('POST["username"]');
+        $password = $this->f3->get('POST["password"]');
+        $isRemembered = $this->f3->get('POST["rememberCheckbox"]');
+        $auth = new \Auth($admin, ['id'=>'username', 'pw'=>'password']);
 
-       if($auth->login($username, $password)) {
-          if ($isRemembered == "on")
-              setcookie('isLoggin', 'true');
-          $this->f3->reroute('@index');
+        if($auth->login($username, $password)) {
+           if ($isRemembered == "on")
+               setcookie('isLoggin', 'true');
+           $this->f3->reroute('@index');
         } else {
-          echo "salah boy!";
+           echo "salah boy!";
         }
     }
 }
