@@ -4,12 +4,8 @@
  */
 class RootController {
 
-    public function __construct() {
-        $this->f3 = Base::instance();
-    }
-
     private function renderIndexOrElse($run) {
-        if ($this->f3->get('COOKIE["isLoggin"]') == 'true')
+        if (Base::Instance()->get('COOKIE["isLoggin"]') == 'true')
             echo \Template::instance()->render('index.html');
         else
             $run();
@@ -17,7 +13,7 @@ class RootController {
 
     public function getIndex() {
         $this->renderIndexOrElse(function() {
-            $this->f3->reroute('@get_login');
+            Base::Instance()->reroute('@get_login');
         });    
     }
 
@@ -32,25 +28,23 @@ class RootController {
     }
 
     public function getLogout() {
-        if($this->f3->get('COOKIE[isLoggin]') == 'true')
+        if(Base::Instance()->get('COOKIE[isLoggin]') == 'true')
             setcookie ("isLoggin", "", time() - 3600);
-        $this->f3->reroute('@get_login');
+        Base::Instance()->reroute('@get_login');
     }
 
     public function postLogin() {
-        $admin = new Admin($this->f3->get('DB'));
+        $admin = new Admin(Base::Instance()->get('DB'));
 
-        $username = $this->f3->get('POST["username"]');
-        $password = $this->f3->get('POST["password"]');
-        $isRemembered = $this->f3->get('POST["rememberCheckbox"]');
+        $username = Base::Instance()->get('POST["username"]');
+        $password = Base::Instance()->get('POST["password"]');
         $auth = new \Auth($admin, ['id'=>'username', 'pw'=>'password']);
 
         if($auth->login($username, $password)) {
-           if ($isRemembered == "on")
-               setcookie('isLoggin', 'true');
-           $this->f3->reroute('@get_index');
+           setcookie('isLoggin', 'true');
+           Base::Instance()->reroute('@get_index');
         } else {
-           echo "salah boy!";
+           echo "Salah boy!";
         }
     }
 }
