@@ -22,12 +22,6 @@ class RootController {
     }
 
     public function getLogin() {
-        $db = new DB\SQL(
-            $this->f3->get('db.dns'),
-            $this->f3->get('db.user'),
-            $this->f3->get('db.password')
-        );
-
         $this->renderIndexOrElse(function() {
             echo \Template::instance()->render('login.html');
         });
@@ -37,12 +31,14 @@ class RootController {
         echo json_encode(Item::all());
     }
 
+    public function getLogout() {
+        if($this->f3->get('COOKIE[isLoggin]') == 'true')
+            setcookie ("isLoggin", "", time() - 3600);
+        $this->f3->reroute('@get_login');
+    }
+
     public function postLogin() {
-        $admin = new Admin(new DB\SQL(
-           $this->f3->get('db.dns'),
-           $this->f3->get('db.user'),
-           $this->f3->get('db.password')
-        ));
+        $admin = new Admin($this->f3->get('DB'));
 
         $username = $this->f3->get('POST["username"]');
         $password = $this->f3->get('POST["password"]');
@@ -52,7 +48,7 @@ class RootController {
         if($auth->login($username, $password)) {
            if ($isRemembered == "on")
                setcookie('isLoggin', 'true');
-           $this->f3->reroute('@index');
+           $this->f3->reroute('@get_index');
         } else {
            echo "salah boy!";
         }

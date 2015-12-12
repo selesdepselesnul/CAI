@@ -10,12 +10,11 @@ class Item extends DB\SQL\Mapper {
 	}
 
 	public static function all() {
-		$db = new DB\SQL(
-			Base::Instance()->get('db.dns'),
-			Base::Instance()->get('db.user'),
-			Base::Instance()->get('db.password')
-		);
-	    return $db->exec("SELECT * FROM items");
+		return Base::Instance()->get('DB')->exec("SELECT * FROM items");
 	}
 
+	public static function getItemsByKey($key, $value) {
+		return Base::Instance()->get('DB')->exec("SELECT * FROM items WHERE " 
+			. $key . " = " . "'" .  $value . "'");
+	}
 }
