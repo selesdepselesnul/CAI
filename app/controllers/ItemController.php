@@ -1,15 +1,19 @@
 <?php
 class ItemController {
-	function get() {
-
+	
+	public function get($f3) {
+		echo "get request";
 	}
-    function post() {
+
+    public function post($f3) {
 
     }
-    function put() {
+
+    public function put($f3) {
 
     }
-    function delete() {
+
+    public function delete($f3) {
 
     }
 }

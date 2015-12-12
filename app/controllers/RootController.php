@@ -3,7 +3,7 @@
  *@author : Moch Deden (https://github.com/selesdepselesnul)
  */
 class RootController {
-    
+
     public function __construct() {
         $this->f3 = Base::instance();
     }
@@ -19,7 +19,7 @@ class RootController {
         $this->indexOrElse(function() {
             $this->f3->reroute('login/');
         });    
-    
+
     }
 
 
@@ -31,22 +31,24 @@ class RootController {
     }
 
     public function postLogin() {
+        
         $db = new DB\SQL(
             $this->f3->get('db.dns'),
             $this->f3->get('db.user'),
             $this->f3->get('db.password')
-        );
+            );
         
         $admin = new Admin($db);
         $username = $this->f3->get('POST["username"]');
         $password = $this->f3->get('POST["password"]');
         $isRemembered = $this->f3->get('POST["rememberCheckbox"]');
-
-        if($admin->password == $password) {
+        $auth = new \Auth($admin, ['id'=>'username', 'pw'=>'password']);
+        
+        
+        if($auth->login($username, $password)) {
             if ($isRemembered == "on")
                 setcookie('isLoggin', 'true');
             $this->f3->reroute('/');
-        }
-        
+        } 
     }
 }
