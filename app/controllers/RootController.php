@@ -8,35 +8,32 @@ class RootController {
         $this->f3 = Base::instance();
     }
 
-    private function indexOrElse($func) {
+    private function renderIndexOrElse($handler) {
         if ($this->f3->get('COOKIE["isLoggin"]') == 'true')
             echo \Template::instance()->render('index.html');
         else
-            $func();
+            $handler();
     }
 
     public function index() {
-        $this->indexOrElse(function() {
+        $this->renderIndexOrElse(function() {
             $this->f3->reroute('login/');
         });    
-
     }
 
 
-    public function login() {
-        $this->indexOrElse(function() {
+    public function getLogin() {
+        $this->renderIndexOrElse(function() {
             echo \Template::instance()->render('login.html');
         });
-        
     }
 
     public function postLogin() {
-        
         $db = new DB\SQL(
             $this->f3->get('db.dns'),
             $this->f3->get('db.user'),
             $this->f3->get('db.password')
-            );
+        );
         
         $admin = new Admin($db);
         $username = $this->f3->get('POST["username"]');
@@ -49,6 +46,8 @@ class RootController {
             if ($isRemembered == "on")
                 setcookie('isLoggin', 'true');
             $this->f3->reroute('/');
-        } 
+        } else {
+            echo "salah boy!";
+        }
     }
 }
