@@ -1,7 +1,7 @@
 <?php
 class Item extends DB\SQL\Mapper {
 	
-	function __construct($db, $id) {
+	public function __construct($db, $id) {
 		parent::__construct($db, 'items');
 		$this->load(['id = ?', $id]);
 	}
