@@ -1,4 +1,7 @@
 <?php
+/**
+ * @author Moch Deden (https://github.com/selesdepselesnul)
+ */
 class ItemController {
 	
 	public function get($f3) {

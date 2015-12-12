@@ -1,6 +1,6 @@
 <?php
 /**
- *@author : Moch Deden (https://github.com/selesdepselesnul)
+ *@author Moch Deden (https://github.com/selesdepselesnul)
  */
 class RootController {
 

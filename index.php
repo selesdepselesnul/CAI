@@ -5,11 +5,13 @@
 require('lib/base.php');
 $app = Base::instance();
 $app->config('config.ini');
-$app->set('DB', 
+$app->set(
+	'DB', 
 	new DB\SQL(
-            $app->get('db.dns'),
-            $app->get('db.user'),
-            $app->get('db.password'))
+        $app->get('db.dns'),
+        $app->get('db.user'),
+        $app->get('db.password')
+    )
 );
 
 $app->route('GET @get_index: /', 'RootController->getIndex');
