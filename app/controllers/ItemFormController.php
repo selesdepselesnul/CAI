@@ -1,10 +1,13 @@
 <?php
+/**
+ *@author Moch Deden (https://github.com/selesdepselesnul)
+ */
 class ItemFormController {
 	
 	public function getFormSubmiting() {
 		if(Base::Instance()->get('COOKIE[isLoggin]') == 'true')
 			echo \Template::instance()
-		                  ->render('itemsubmitingform.html');
+		->render('itemsubmitingform.html');
 		else 
 			Base::instance()->reroute('@get_login');                  
 	}

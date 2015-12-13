@@ -1,4 +1,7 @@
 <?php
+/**
+ *@author Moch Deden (https://github.com/selesdepselesnul)
+ */
 class ItemTransactionController {
 	
     public function getItemsTransactionsByDate() {
