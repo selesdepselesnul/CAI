@@ -19,10 +19,10 @@ $app->route('GET @get_login: /login', 'RootController->getLogin');
 $app->route('GET /logout', 'RootController->getLogout');
 $app->route('GET /item', 'RootController->getItems');
 $app->route('GET /item/key/@key/@value', 'ItemController->getItemsByKey');
-$app->route('GET /item/transaction/date/@transaction_date', 
-	'ItemTransactionController->getItemsTransactionsByDate');
-$app->route('GET /item/transaction/time/@transaction_time', 
-	'ItemTransactionController->getItemsTransactionsByTime');
+$app->route('GET /itemtransaction', 
+	'ItemTransactionController->getItemsTransactions');
+$app->route('GET /itemtransaction/datetime/@transaction_date_time', 
+	'ItemTransactionController->getItemsTransactionsByDateTime');
 $app->route('POST /login', 'RootController->postLogin');
 
 $app->map('/item/@item','ItemController');

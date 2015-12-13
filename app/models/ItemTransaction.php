@@ -2,19 +2,20 @@
 class ItemTransaction {
 	
 	private static function filterDateTime($pattern) {
-    	return Base::instance()
+		return Base::instance()
 		->get('DB')
 		->exec(
 			"SELECT * FROM items_transactions 
-			WHERE transaction_time REGEXP '" . $pattern . "'");
-    }
-
-	public static function getItemsTransactionsByDate($date) {
-		return self::filterDateTime(".*" . $date); 
+			WHERE transaction_time REGEXP '.*" . $pattern . ".*'");
 	}
 
-	public static function getItemsTransactionsByTime($time) {
-		return self::filterDateTime($time .".*");
+	public static function getItemsTransactionsByDateTime($datetime) {
+		return self::filterDateTime($datetime); 
 	}
 
+	public static function all() {
+		return Base::instance()
+		->get('DB')
+		->exec("SELECT * FROM items_transactions");
+	}
 }
