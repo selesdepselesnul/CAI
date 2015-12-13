@@ -21,6 +21,8 @@ $app->route('GET /item', 'RootController->getItems');
 $app->route('GET /item/key/@key/@value', 'ItemController->getItemsByKey');
 $app->route('GET /item/transaction/date/@transaction_date', 
 	'ItemTransactionController->getItemsTransactionsByDate');
+$app->route('GET /item/transaction/time/@transaction_time', 
+	'ItemTransactionController->getItemsTransactionsByTime');
 $app->route('POST /login', 'RootController->postLogin');
 
 $app->map('/item/@item','ItemController');
