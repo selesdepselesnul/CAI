@@ -5,7 +5,6 @@
 class RootController {
 
     private function renderIndexOrElse($run) {
-
         Base::Instance()->set('content', 'index.html');
         if (Base::Instance()->get('COOKIE["isLoggin"]') == 'true')
             echo \Template::instance()->render('layout.html');

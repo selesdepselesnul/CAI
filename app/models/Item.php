@@ -4,9 +4,10 @@
 */
 class Item extends DB\SQL\Mapper {
 	
-	public function __construct($db, $id) {
+	public function __construct($db, $id=0) {
 		parent::__construct($db, 'items');
-		$this->load(['id = ?', $id]);
+		if($id != 0)
+		    $this->load(['id = ?', $id]);
 	}
 
 	public static function all() {

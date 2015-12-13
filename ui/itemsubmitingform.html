@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FORM</title>
+</head>
+<body>
+	<form action="" method="post">
+		<input type="text" name="label" placeholder="label"></input><br/>
+		<input type="text" name="price" placeholder="harga"></input><br/>
+		<input type="text" name="quantity" placeholder="jumlah"></input><br/>
+		<input type="text" name="discount" placeholder="diskon"></input><br/>
+		<input type="text" name="type" placeholder="tipe"></input><br/>
+		<input type="submit"></input>
+	</form>
+	<check if="{{ @isPostMode }}">
+		<true>
+			<check if="{{ @isSucess }}">
+				<true>
+					<div>yeah</div>
+				</true>
+			</check>
+		</true>
+	</check>
+</body>
+</html>
