@@ -20,6 +20,7 @@ $app->route('GET /logout', 'RootController->getLogout');
 $app->route('POST /login', 'RootController->postLogin');
 
 $app->route('GET /item', 'RootController->getItems');
+$app->route('POST /item/create', 'ItemController->postNewItem');
 $app->map('/item/@item','ItemController');
 $app->route('GET /item/key/@key/@value', 'ItemController->getItemsByKey');
 
