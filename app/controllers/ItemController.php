@@ -57,6 +57,7 @@ class ItemController {
     public function getItemsByKey($f3) {
         $key = $f3->get('PARAMS["key"]');
         $value = $f3->get('PARAMS["value"]');
-        echo json_encode(Item::getItemsByKey($key, $value));
+        $operator = $f3->get('PARAMS["operator"]');
+        echo json_encode(Item::getItemsByKey($key, $operator, $value));
     }
 }

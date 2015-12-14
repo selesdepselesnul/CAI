@@ -14,9 +14,18 @@ class Item extends DB\SQL\Mapper {
 		return Base::Instance()->get('DB')->exec("SELECT * FROM Item");
 	}
 
-	public static function getItemsByKey($key, $value) {
+	public static function getItemsByKey($key, $operator, $value) {
+		if($operator == 'eq')
+			return self::getItemWhere($key, "=", $value);
+		elseif ($operator == 'lt') 
+			return self::getItemWhere($key, "<", $value);
+		else
+			return self::getItemWhere($key, ">", $value);
+	}
+
+	private static function getItemWhere($key, $operator, $value) {
 		return Base::Instance()->get('DB')->exec(
 			"SELECT * FROM Item WHERE " 
-			. $key . " = " . "'" .  $value . "'");
+			. $key . $operator . "'" .  $value . "'");
 	}
 }
