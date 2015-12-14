@@ -24,10 +24,6 @@ class RootController {
         });
     }
 
-    public function getItems() {
-        echo json_encode(Item::all());
-    }
-
     public function getLogout() {
         if(Base::Instance()->get('COOKIE[isLoggin]') == 'true')
             setcookie ("isLoggin", "", time() - 3600);

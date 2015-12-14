@@ -4,7 +4,7 @@
  */
 class ItemController {
 	
-	public function get($f3) {
+	public function getItemById($f3) {
         $item = new Item($f3->get('DB'), $f3->get("PARAMS['item']"));
         echo json_encode([
             "id" => $item->id, 
@@ -14,6 +14,10 @@ class ItemController {
             "discount" => $item->discount,
             "type" => $item->type
         ]);
+    }
+
+     public function getAll($f3) {
+        echo json_encode(Item::all());
     }
 
     public function postNewItem($f3) {
@@ -26,9 +30,6 @@ class ItemController {
         $newItem->save();
 
         echo "berhasil hore!";
-    }
-
-    public function delete($f3) {
     }
     
     public function getItemsByKey($f3) {

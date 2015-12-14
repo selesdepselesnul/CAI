@@ -14,29 +14,35 @@ $app->set(
     )
 );
 
+
+// root controller
 $app->route('GET @get_index: /', 'RootController->getIndex');
 $app->route('GET @get_login: /login', 'RootController->getLogin');
 $app->route('GET /logout', 'RootController->getLogout');
 $app->route('POST /login', 'RootController->postLogin');
 
-$app->route('GET /item', 'RootController->getItems');
-$app->route('POST /item/create', 'ItemController->postNewItem');
-$app->map('/item/@item','ItemController');
-$app->route('GET /item/key/@key/@value', 'ItemController->getItemsByKey');
+
+// item controller
+$app->route('GET /json/item', 'ItemController->getAll');
+$app->route('GET /json/item/@item', 'ItemController->getItemById');
+$app->route('GET /json/item/@key/@value', 'ItemController->getItemsByKey');
+$app->route('POST /json/item/new', 'ItemController->postNewItem');
 
 
-$app->route('GET /itemtransaction', 
-	'ItemTransactionController->getItemsTransactions');
-$app->route('GET /itemtransaction/date/@transaction_date', 
+// item transaction controller
+$app->route('GET /json/itemtransaction', 
+	'ItemTransactionController->getAll');
+$app->route('GET /json/itemtransaction/date/@date', 
 	'ItemTransactionController->getItemsTransactionsByDate');
-$app->route('GET /itemtransaction/time/@transaction_time', 
+$app->route('GET /json/itemtransaction/time/@time', 
 	'ItemTransactionController->getItemsTransactionsByTime');
-$app->route('GET /itemtransaction/datetime/@transaction_date/@transaction_time', 
+$app->route('GET /json/itemtransaction/datetime/@date/@time', 
 	'ItemTransactionController->getItemsTransactionsByDateTime');
 
+// web route
 $app->route('GET /item/form/submit',
 	'ItemFormController->getFormSubmiting');
-
-$app->route('POST /item/form/submit', 'ItemFormController->postFormSubmiting');
+$app->route('POST /item/form/submit', 
+	'ItemFormController->postFormSubmiting');
 
 $app->run();
