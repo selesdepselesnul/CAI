@@ -1,7 +1,7 @@
 <?php
 /**
-*@author Moch Deden (https://github.com/selesdepselesnul)
-*/
+ * @author Moch Deden (https://github.com/selesdepselesnul)
+ */
 require('lib/base.php');
 $app = Base::instance();
 $app->config('config.ini');
