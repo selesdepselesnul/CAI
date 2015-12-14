@@ -27,6 +27,7 @@ $app->route('GET /json/item', 'ItemController->getAll');
 $app->route('GET /json/item/@id', 'ItemController->getItemById');
 $app->route('GET /json/item/@key/@value', 'ItemController->getItemsByKey');
 $app->route('POST /json/item/new', 'ItemController->postNewItem');
+$app->route('POST /json/item/@id/edit', 'ItemController->postEditItem');
 
 
 // item transaction controller
