@@ -2,14 +2,22 @@
 /**
  *@author Moch Deden (https://github.com/selesdepselesnul)
  */
-class ItemTransaction {
+class ItemTransaction extends DB\SQL\Mapper {
+
+	public function __construct($db, $id=0) {
+		parent::__construct($db, 'ItemTransaction');
+		if($id != 0)
+			$this->load(['id = ?', $id]);
+	}
+
 	
 	private static function filterDateTime($pattern) {
 		return Base::instance()
 		->get('DB')
 		->exec(
-			"SELECT * FROM items_transactions 
-			WHERE transaction_time " . $pattern);
+			"SELECT * FROM ItemTransaction WHERE transactionTime " 
+			. $pattern
+		);
 	}
 
 	public static function getItemsTransactionsByDateTime($date, $time) {
@@ -28,6 +36,6 @@ class ItemTransaction {
 	public static function all() {
 		return Base::instance()
 		->get('DB')
-		->exec("SELECT * FROM items_transactions");
+		->exec("SELECT * FROM ItemTransaction");
 	}
 }

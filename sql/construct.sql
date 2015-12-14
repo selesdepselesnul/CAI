@@ -1,27 +1,28 @@
+-- author : Moch Deden (https://github.com/selesdepselesnul)
 CREATE DATABASE cai;
 USE cai;
 
-CREATE TABLE admins (
+CREATE TABLE Admin (
     username VARCHAR(20) PRIMARY KEY,
     password TEXT
 );
 
-CREATE TABLE items (
+CREATE TABLE Item (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
     label TEXT,    
     price BIGINT,    
     quantity BIGINT, 
     discount DECIMAL(5,2),    
     type TEXT, 
-    created_at DATETIME DEFAULT NOW(), 
-    updated_at DATETIME DEFAULT NOW() 
+    createdAt DATETIME DEFAULT NOW(), 
+    updatedAt DATETIME DEFAULT NOW() 
 );
 
-CREATE TABLE items_transactions (
+CREATE TABLE ItemTransaction (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
-    transaction_time DATETIME DEFAULT NOW(),
-    item_id BIGINT NOT NULL, 
+    transactionTime DATETIME DEFAULT NOW(),
+    itemId BIGINT NOT NULL, 
     price BIGINT,
-    FOREIGN KEY (item_id) REFERENCES items (id) 
+    FOREIGN KEY (itemId) REFERENCES Item (id) 
 );
 

@@ -38,6 +38,8 @@ $app->route('GET /json/itemtransaction/time/@time',
 	'ItemTransactionController->getItemsTransactionsByTime');
 $app->route('GET /json/itemtransaction/datetime/@date/@time', 
 	'ItemTransactionController->getItemsTransactionsByDateTime');
+$app->route('POST /json/itemtransaction/new', 
+	'ItemTransactionController->postNewItemTransaction');
 
 // web route
 $app->route('GET /item/form/submit',
