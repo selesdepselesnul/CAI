@@ -24,7 +24,7 @@ $app->route('POST /login', 'RootController->postLogin');
 
 // item controller
 $app->route('GET /json/item', 'ItemController->getAll');
-$app->route('GET /json/item/@item', 'ItemController->getItemById');
+$app->route('GET /json/item/@id', 'ItemController->getItemById');
 $app->route('GET /json/item/@key/@value', 'ItemController->getItemsByKey');
 $app->route('POST /json/item/new', 'ItemController->postNewItem');
 
@@ -32,6 +32,8 @@ $app->route('POST /json/item/new', 'ItemController->postNewItem');
 // item transaction controller
 $app->route('GET /json/itemtransaction', 
 	'ItemTransactionController->getAll');
+$app->route('GET /json/itemtransaction/@id', 
+	'ItemTransactionController->getItemTransactionById');
 $app->route('GET /json/itemtransaction/date/@date', 
 	'ItemTransactionController->getItemsTransactionsByDate');
 $app->route('GET /json/itemtransaction/time/@time', 

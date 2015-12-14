@@ -8,6 +8,18 @@ class ItemTransactionController {
 		echo json_encode(ItemTransaction::all());
 	}
 
+	public function getItemTransactionById($f3) {
+		$item_transaction = 
+		new ItemTransaction($f3->get('DB'), $f3->get('PARAMS["id"]'));
+		
+		echo json_encode([
+			"id" => $item_transaction->id, 
+			"price" => $item_transaction->price, 
+			"itemId" => $item_transaction->itemId,
+			"transactionTime" => $item_transaction->transactionTime
+			]);   
+	}
+
 	public function postNewItemTransaction($f3) {
 		$item_transactions = new ItemTransaction($f3->get('DB'));
 		$item_transactions->itemId = $f3->get('POST["itemId"]');
@@ -17,18 +29,18 @@ class ItemTransactionController {
 
 	}
 
-    public function getItemsTransactionsByDate() {
+	public function getItemsTransactionsByDate() {
 		$date = Base::instance()->get('PARAMS[date]');
 		echo json_encode(
 			ItemTransaction::getItemsTransactionsByDate($date)
-		);
+			);
 	}
 
-    public function getItemsTransactionsByTime() {
+	public function getItemsTransactionsByTime() {
 		$time = Base::instance()->get('PARAMS[time]');
 		echo json_encode(
 			ItemTransaction::getItemsTransactionsByTime($time)
-		);
+			);
 	}
 
 	public function getItemsTransactionsByDateTime() {
@@ -36,7 +48,7 @@ class ItemTransactionController {
 		$time = Base::instance()->get('PARAMS[time]');
 		echo json_encode(
 			ItemTransaction::getItemsTransactionsByDateTime($date, $time)
-		);
+			);
 	}
 
 }

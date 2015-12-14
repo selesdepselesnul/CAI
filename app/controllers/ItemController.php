@@ -5,7 +5,7 @@
 class ItemController {
 	
 	public function getItemById($f3) {
-        $item = new Item($f3->get('DB'), $f3->get("PARAMS['item']"));
+        $item = new Item($f3->get('DB'), $f3->get("PARAMS['id']"));
         echo json_encode([
             "id" => $item->id, 
             "label" => $item->label,
