@@ -44,10 +44,12 @@ class ItemTransactionController {
 	}
 
 	public function getItemsTransactionsByDateTime() {
+		$operator = Base::instance()->get('PARAMS[operator]');
 		$date = Base::instance()->get('PARAMS[date]');
 		$time = Base::instance()->get('PARAMS[time]');
 		echo json_encode(
-			ItemTransaction::getItemsTransactionsByDateTime($date, $time)
+			ItemTransaction::getItemsTransactionsByDateTime(
+				$operator, $date, $time)
 			);
 	}
 

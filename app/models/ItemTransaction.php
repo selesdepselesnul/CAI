@@ -17,11 +17,17 @@ class ItemTransaction extends DB\SQL\Mapper {
 		->exec(
 			"SELECT * FROM ItemTransaction WHERE transactionTime " 
 			. $pattern
-		);
+			);
 	}
 
-	public static function getItemsTransactionsByDateTime($date, $time) {
-		return self::filterDateTime("="."'".$date." ".$time."'"); 
+	public static function getItemsTransactionsByDateTime(
+		$operator,$date, $time) {
+		if($operator == 'eq')
+			return self::filterDateTime("="."'".$date." ".$time."'"); 
+		else if($operator == 'lt')
+			return self::filterDateTime("<"."'".$date." ".$time."'");
+		else 
+			return self::filterDateTime(">"."'".$date." ".$time."'"); 
 	}
 
 
