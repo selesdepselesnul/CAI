@@ -2,24 +2,18 @@
 <html>
 <head>
 	<title>FORM</title>
+
 </head>
 <body>
-	<form action="" method="post">
-		<input type="text" name="label" placeholder="label"></input><br/>
-		<input type="text" name="price" placeholder="harga"></input><br/>
-		<input type="text" name="quantity" placeholder="jumlah"></input><br/>
-		<input type="text" name="discount" placeholder="diskon"></input><br/>
-		<input type="text" name="type" placeholder="tipe"></input><br/>
-		<input type="submit"></input>
-	</form>
-	<?php if ($isPostMode): ?>
-		
-			<?php if ($isSucess): ?>
-				
-					<div>yeah</div>
-				
-			<?php endif; ?>
-		
-	<?php endif; ?>
+	<input type="text" placeholder="label" id="label"></input><br/>
+	<input type="text" placeholder="harga" id="price"></input><br/>
+	<input type="text" placeholder="kuantitas" id="quantity"></input><br/>
+	<input type="text" placeholder="diskon" id="discount" ></input><br/>
+	<select name="select" placeholder="type" id="type"></select>
+	<input type="text" id="newType" placeholder="baru"></input>
+	<button id="newTypeButton">baru</button>
+	<button id="addItemButton">Tambah!</button>
+	<script src=<?php echo $BASE.'/'.$UI.'js/jquery-2.1.4.js'; ?>></script>
+	<script src=<?php echo $BASE.'/'.$UI.'js/itemsubmitinghandler.js'; ?>></script>
 </body>
 </html>

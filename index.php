@@ -51,10 +51,7 @@ $app->route('GET /json/itemtransaction/datetime/@operator/@date/@time',
 $app->route('POST /json/itemtransaction/new', 
 	'ItemTransactionController->postNewItemTransaction');
 
-// web route
-$app->route('GET /item/form/submit',
-	'ItemFormController->getFormSubmiting');
-$app->route('POST /item/form/submit', 
-	'ItemFormController->postFormSubmiting');
-
+// app root
+$app->route('GET /app/item/submit', 
+	'ItemAppController->getSubmitForm');
 $app->run();

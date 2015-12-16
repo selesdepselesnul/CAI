@@ -1,1 +1,1 @@
-cucok! index
+<a href="<?php echo $BASE . '/app' . '/item/submit'; ?>">tambah stock item</a>

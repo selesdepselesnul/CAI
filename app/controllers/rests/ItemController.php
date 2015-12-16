@@ -47,7 +47,7 @@ class ItemController {
         $new_item = new Item($f3->get('DB'));
         $new_item->label = $f3->get('POST["label"]');
         $new_item->price = $f3->get('POST["price"]');
-        $new_item->quantity = $f3->get('POST["quantiy"]');
+        $new_item->quantity = $f3->get('POST["quantity"]');
         $new_item->discount = $f3->get('POST["discount"]');
         $new_item->type = $f3->get('POST["type"]');
         $new_item->save();
