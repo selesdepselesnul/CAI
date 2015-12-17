@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="{{ $ENCODING }}" />
-		<title>{{ @site }}</title>
-		<base href="{{ @SCHEME.'://'.@HOST.':'.@PORT.@BASE.'/' }}" />
-		<link rel="stylesheet" href="lib/code.css" type="text/css" />
-		<link rel="stylesheet" href="ui/css/base.css" type="text/css" />
-		<link rel="stylesheet" href="ui/css/theme.css" type="text/css" />
-		<script src="ui/js/jquery-2.1.4.js"></script>
-	</head>
-	<body>
+<head>
+	<meta charset="{{ $ENCODING }}" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>{{ @site }}</title>
+	<base href="{{ @SCHEME.'://'.@HOST.':'.@PORT.@BASE.'/' }}" />
+	<link rel="stylesheet" href="lib/code.css" type="text/css" />
+	<link rel="stylesheet" href="ui/css/base.css" type="text/css" />
+	<link rel="stylesheet" href="ui/css/theme.css" type="text/css" />
+	<link rel="stylesheet" href="ui/bootstrap/css/bootstrap.css" type="text/css" />
+	<link rel="stylesheet" href="ui/bootstrap/css/bootstrap-theme.css" type="text/css" />
+	<script src="ui/js/jquery-2.1.4.js"></script>
+	<script src="ui/bootstrap/js/bootstrap.js"></script>
+</head>
+<body>
+	<div class="container-fluid">
 		<include href="{{ @content }}" />
-	</body>
+	</div>
+</body>
 </html>

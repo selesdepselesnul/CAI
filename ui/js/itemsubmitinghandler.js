@@ -8,6 +8,19 @@ $(window).load(function() {
 				$('#type')
 				.append('<option value="' + x + '">' + x + '</option>');
 			});
+
+			items.forEach(function(x) {
+				var makeTableData = function(data) {
+					return '<td>' + data + '</td>'; 
+				}
+				
+				$('#itemTable')
+				.append('<tr>' 
+					+ makeTableData(x.label) + makeTableData(x.price) 
+					+ makeTableData(x.quantity) + makeTableData(x.discount)
+					+ makeTableData(x.type)
+					+ '</tr>');
+			})
 		});
 	$("#newType").fadeOut('slow');
 });

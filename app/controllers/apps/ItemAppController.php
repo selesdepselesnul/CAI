@@ -1,6 +1,7 @@
 <?php
 class ItemAppController {
 	public function getSubmitForm($f3) {
-		echo \Template::instance()->render('itemsubmitingform.html');
+		$f3->set('content', 'itemsubmitingform.html');
+		echo \Template::instance()->render('layout.html');
 	}
 }
