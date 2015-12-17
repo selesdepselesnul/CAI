@@ -1,4 +1,8 @@
-$(window).load(function() {
+function makeTableData (data) {
+	return '<td>' + data + '</td>'; 
+}
+
+var loadData = function() {
 	$.getJSON( "http://127.0.0.1:8080/CAI/json/item", 
 		function(items) {
 			var types = $.map(items, function(x) {
@@ -10,9 +14,7 @@ $(window).load(function() {
 			});
 
 			items.forEach(function(x) {
-				var makeTableData = function(data) {
-					return '<td>' + data + '</td>'; 
-				}
+				
 				
 				$('#itemTable')
 				.append('<tr>' 
@@ -23,7 +25,9 @@ $(window).load(function() {
 			})
 		});
 	$("#newType").fadeOut('slow');
-});
+};
+
+$(window).load(loadData);
 
 $(document).ready(function() {
 	$('#newTypeButton').click(function() {
@@ -59,7 +63,14 @@ $(document).ready(function() {
 		.always(function(data) {
 			console.log('nyimpen data cyyn');})
 		.done(function( data ) {
-			console.log(data);
+			$('#itemTable')
+			.append("<tr>" + makeTableData(label) + makeTableData(price)
+				+ makeTableData(quantity) + makeTableData(discount)
+				+ makeTableData(type) + "</tr>");
+			$('#label').val(''); 
+			$('#price').val('');
+			$('#quantity').val('');
+			$('#discount').val('');
 		});
 	});
 });
