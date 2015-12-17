@@ -71,6 +71,8 @@ $(document).ready(function() {
 			$('#price').val('');
 			$('#quantity').val('');
 			$('#discount').val('');
+			$('#addItemButton')
+			.after('<div class="alert alert-success" role="alert">sukses cyyn</div>');
 		});
 	});
 });
