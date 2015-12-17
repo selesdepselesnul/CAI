@@ -2,14 +2,25 @@
 	<h1>Inventory</h1>
 </div>
 <div class="form-group">
-	<input type="text" placeholder="label" id="label" class="form-control"></input>
-	<input type="number" placeholder="harga" id="price" class="form-control"></input>
-	<input type="number" placeholder="kuantitas" id="quantity" class="form-control"></input>
-	<input type="text" placeholder="diskon" id="discount" class="form-control" ></input>
-	<select name="select" placeholder="type" id="type" class="form-control"></select>
-	<input type="text" id="newType" placeholder="baru" class="form-control"></input>
-	<button id="newTypeButton" class="btn btn-default">baru</button>
-	<button id="addItemButton" class="btn btn-primary">Tambah!</button>
+	<div class="form-inline">
+		<input type="text" placeholder="label" id="label" class="form-control"></input>
+		<select name="select" placeholder="type" id="type" class="form-control input-sm">
+		</select>
+		<input type="text" id="newType" placeholder="baru" class="form-control"></input>
+		<button id="newTypeButton" class="btn btn-default">baru</button>
+	</div>
+	<div class="form-inline">
+		<input type="number" placeholder="harga" id="price" class="form-control"></input>
+		<input type="number" placeholder="kuantitas" id="quantity" class="form-control"></input>
+		<input type="text" placeholder="diskon" id="discount" class="form-control" ></input>
+	</div>
+	
+	<div class="form-inline">
+		
+		<button id="addItemButton" class="btn btn-primary">Tambah!</button>
+		<input type="search" id="searchField" placeholder="search..." class="form-control">
+	</input>
+</div>
 </div>
 <table id="itemTable" class="table table-condensed">
 	<tr>

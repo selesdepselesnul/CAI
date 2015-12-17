@@ -24,7 +24,7 @@ var loadData = function() {
 					+ '</tr>');
 			})
 		});
-	$("#newType").fadeOut('slow');
+	$("#newType").fadeOut();
 };
 
 $(window).load(loadData);
