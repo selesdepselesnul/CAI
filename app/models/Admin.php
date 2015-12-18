@@ -5,6 +5,6 @@
 class Admin extends DB\SQL\Mapper {
 	public function __construct($db) {
 		parent::__construct($db, 'Admin');
-		$this->load(['username = ?', 'root']);
+		// $this->load(['username = ?', 'root']);
 	}
 }

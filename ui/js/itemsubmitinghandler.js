@@ -30,6 +30,13 @@ var loadData = function() {
 $(window).load(loadData);
 
 $(document).ready(function() {
+	
+	$('#searchField').on('input', function() {
+		console.log($('#searchField').val());
+		var filterCategory = $('#filterCategory').val();
+		var filterAction = $('#filterAction').val();
+	});
+
 	$('#newTypeButton').click(function() {
 		if($("#newTypeButton").text() === 'baru') {
 			$('#newType').fadeIn('slow');
@@ -74,5 +81,8 @@ $(document).ready(function() {
 			$('#addItemButton')
 			.after('<div class="alert alert-success" role="alert">sukses cyyn</div>');
 		});
+
+		
 	});
+
 });
