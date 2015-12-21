@@ -4,62 +4,70 @@
  */
 require('lib/base.php');
 
+class Boot {
 
-$app = Base::instance();
-$app->config('config.ini');
-$app->set(
-	'DB', 
-	new DB\SQL(
-		$app->get('db.dns'),
-		$app->get('db.user'),
-		$app->get('db.password')
-		)
-	);
+	public function __construct() {
+		$this->app = Base::instance();
+		$this->app->config('config.ini');
+		$this->app->set(
+			'DB', 
+			new DB\SQL(
+				$this->app->get('db.dns'),
+				$this->app->get('db.user'),
+				$this->app->get('db.password')
+				)
+		);
+		$this->initItemController();
+		$this->initItemTransactionController();
+		$this->initAppController();
+	}
 
+	private function initItemController() {
+		$this->app->route('GET /json/item', 'ItemController->getAll');
+		$this->app->route('GET /json/item/@id', 'ItemController->getItemById');
+		$this->app->route('GET /json/item/@key/@operator/@value', 
+			'ItemController->getItemsByKey');
+		$this->app->route('POST /json/item/new', 
+			'ItemController->postNewItem');
+		$this->app->route('POST /json/item/@id/edit', 
+			'ItemController->postEditItem');
+	}
 
-// root controller
-// $app->route('GET @get_index: /', 'RootController->getIndex');
-// $app->route('GET @get_login: /login', 'RootController->getLogin');
-// $app->route('GET /logout', 'RootController->getLogout');
-// $app->route('POST /login', 'RootController->postLogin');
+	private function initItemTransactionController() {
+		$this->app->route('GET /json/itemtransaction', 
+			'ItemTransactionController->getAll');
+		$this->app->route('GET /json/itemtransaction/@id', 
+			'ItemTransactionController->getItemTransactionById');
+		$this->app->route('GET /json/itemtransaction/date/@date', 
+			'ItemTransactionController->getItemsTransactionsByDate');
+		$this->app->route('GET /json/itemtransaction/time/@time', 
+			'ItemTransactionController->getItemsTransactionsByTime');
+		$this->app->route('GET /json/itemtransaction/datetime/@date/@time', 
+			'ItemTransactionController->getItemsTransactionsByDateTime');
+		$this->app->route('GET /json/itemtransaction/datetime/@operator/@date/@time', 
+			'ItemTransactionController->getItemsTransactionsByDateTime');
+		$this->app->route('POST /json/itemtransaction/new', 
+			'ItemTransactionController->postNewItemTransaction');
+	}
 
+	private function initAppController() {
+		$this->app->route('GET @get_home:/', 
+			'AppController->getHome');
+		$this->app->route('GET @get_login:/login', 
+			'AppController->getLogin');
+		$this->app->route('GET /logout', 'AppController->getLogout');
+		$this->app->route('POST /login', 'AppController->postLogin');
+		$this->app->route('GET @get_inventory:/inventory', 
+			'AppController->getInventory');
+		$this->app->route('GET /cashier', 
+			'AppController->getCashier');
+	}
 
-// item controller
-$app->route('GET /json/item', 'ItemController->getAll');
-$app->route('GET /json/item/@id', 'ItemController->getItemById');
-$app->route('GET /json/item/@key/@operator/@value', 
-	'ItemController->getItemsByKey');
-$app->route('POST /json/item/new', 
-	'ItemController->postNewItem');
-$app->route('POST /json/item/@id/edit', 
-	'ItemController->postEditItem');
+	public function start() {
+		$this->app->run();
+	}
 
+}
 
-// item transaction controller
-$app->route('GET /json/itemtransaction', 
-	'ItemTransactionController->getAll');
-$app->route('GET /json/itemtransaction/@id', 
-	'ItemTransactionController->getItemTransactionById');
-$app->route('GET /json/itemtransaction/date/@date', 
-	'ItemTransactionController->getItemsTransactionsByDate');
-$app->route('GET /json/itemtransaction/time/@time', 
-	'ItemTransactionController->getItemsTransactionsByTime');
-$app->route('GET /json/itemtransaction/datetime/@date/@time', 
-	'ItemTransactionController->getItemsTransactionsByDateTime');
-$app->route('GET /json/itemtransaction/datetime/@operator/@date/@time', 
-	'ItemTransactionController->getItemsTransactionsByDateTime');
-$app->route('POST /json/itemtransaction/new', 
-	'ItemTransactionController->postNewItemTransaction');
-
-// app
-$app->route('GET @get_home:/', 
-	'AppController->getHome');
-$app->route('GET @get_login:/login', 
-	'AppController->getLogin');
-$app->route('GET /logout', 'AppController->getLogout');
-$app->route('POST /login', 'AppController->postLogin');
-$app->route('GET @get_inventory:/inventory', 
-	'AppController->getInventory');
-$app->route('GET /cashier', 
-	'AppController->getCashier');
-$app->run();
+$boot = new Boot;
+$boot->start();
