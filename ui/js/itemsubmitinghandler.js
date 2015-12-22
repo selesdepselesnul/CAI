@@ -1,3 +1,10 @@
+function clearForm() {
+	$('#label').val(''); 
+	$('#price').val('');
+	$('#quantity').val('');
+	$('#discount').val('');
+}
+
 function makeTableData (data) {
 	return '<td>' + data + '</td>'; 
 }
@@ -5,6 +12,15 @@ function makeTableData (data) {
 function addOption(selector, item) {
 	$(selector)
 	.append('<option value="' + item + '">' + item + '</option>');
+}
+
+function appendItemToTable(item) {
+	$('#itemTable')
+	.append('<tr class="itemRowClass">' 
+		+ makeTableData(item.label) + makeTableData(item.price) 
+		+ makeTableData(item.quantity) + makeTableData(item.discount)
+		+ makeTableData(item.type)
+		+ '</tr>');
 }
 
 function loadAllItems(action) {
@@ -16,12 +32,7 @@ function loadAllItems(action) {
 
 function addItemsToTable(items) {
 	items.forEach(function(x) {
-		$('#itemTable')
-		.append('<tr class="itemRowClass">' 
-			+ makeTableData(x.label) + makeTableData(x.price) 
-			+ makeTableData(x.quantity) + makeTableData(x.discount)
-			+ makeTableData(x.type)
-			+ '</tr>');
+		appendItemToTable(x);
 	});
 }
 
@@ -73,28 +84,18 @@ $(document).ready(function() {
 		var price = $('#price').val();
 		var quantity = $('#quantity').val();
 		var discount = $('#discount').val();
-		var type = "";
-
-		if($('#newType').text() === 'baru')
-			type = $('#type').val();
-		else
-			type = $('#newType').val();
-
-		$.post( "http://127.0.0.1:8080/CAI/json/item/new/", 
-			{ label: label, 
-				price: price, 
-				quantity : quantity, 
-				discount: discount, 
-				type: type })
-		.done(function( data ) {
-			$('#itemTable')
-			.append("<tr>" + makeTableData(label) + makeTableData(price)
-				+ makeTableData(quantity) + makeTableData(discount)
-				+ makeTableData(type) + "</tr>");
-			$('#label').val(''); 
-			$('#price').val('');
-			$('#quantity').val('');
-			$('#discount').val('');
+		var type = $('#typeInput').val();
+		const item = { 
+			label: label, 
+			price: price, 
+			quantity : quantity, 
+			discount: discount, 
+			type: type 
+		};
+		$.post( "http://127.0.0.1:8080/CAI/json/item/new/", item)
+		.done(function() {
+			appendItemToTable(item);
+			clearForm();
 			$('#addItemButton')
 			.after('<div class="alert alert-success" role="alert">sukses cyyn</div>');
 		});
