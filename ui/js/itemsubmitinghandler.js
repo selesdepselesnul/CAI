@@ -24,9 +24,10 @@ function appendItemToTable(item) {
 		+ makeTableData('<button id="edit' + item.id + '" class="btn btn-default">' +
 			'<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>' + 
 			'</button>')
-		+ makeTableData('<button id="remove' + item.id + '" class="btn btn-default">' +
-			'<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>' + 
-			'</button>') 
+		+ makeTableData('<button id="remove' + item.id 
+			+ '" class="itemRemover btn btn-default">' 
+			+ '<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>' 
+			+ '</button>') 
 		+ '</tr>');
 }
 
@@ -78,6 +79,10 @@ $(document).ready(function() {
 				});
 	}
 	);
+
+	$('.itemRemover').click(function(e) {
+		console.log('remover click');
+	});
 
 	$('#newTypeInputText').keypress(function(e) {
 		const ENTER = 13;

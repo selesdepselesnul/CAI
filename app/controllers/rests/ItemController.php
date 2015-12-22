@@ -16,6 +16,12 @@ class ItemController {
             ]);
     }
 
+    public function getRemovingItemById($f3) {
+        $removed_item = new Item($f3->get('DB'), $f3->get('PARAMS["id"]'));
+        $removed_item->erase();
+    }
+
+
     public function getAll($f3) {
         echo json_encode(Item::all());
     }
