@@ -9,9 +9,17 @@ function makeTableData (data) {
 	return '<td>' + data + '</td>'; 
 }
 
-function addOption(selector, item) {
+function addOption(selector, item) { 
 	$(selector)
 	.append('<option value="' + item + '">' + item + '</option>');
+}
+
+function removeItem() {
+	console.log('remove cyyn!');
+}
+
+function editItem() {
+	console.log('edit cyyn!');
 }
 
 function appendItemToTable(item) {
@@ -21,11 +29,11 @@ function appendItemToTable(item) {
 		+ makeTableData(item.label) + makeTableData(item.price) 
 		+ makeTableData(item.quantity) + makeTableData(item.discount)
 		+ makeTableData(item.type)
-		+ makeTableData('<button id="edit' + item.id + '" class="btn btn-default">' +
+		+ makeTableData('<button id="edit' + item.id + '" class="btn btn-default" onclick="editItem();">' +
 			'<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>' + 
 			'</button>')
 		+ makeTableData('<button id="remove' + item.id 
-			+ '" class="itemRemover btn btn-default">' 
+			+ '" class="item-remover btn btn-default" onclick="removeItem();">' 
 			+ '<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>' 
 			+ '</button>') 
 		+ '</tr>');
@@ -55,11 +63,15 @@ $(window).load(function() {
 			addOption('.typeSelect', x);
 		});
 	});
-	$("#newTypeInputText").hide();
+	$('#newTypeInputText').hide();
 	$('#alertSuccess').hide();
 });
 
 $(document).ready(function() {
+	
+	$('.item-remover').click(function() {
+		console.log('remove cyyn!');
+	})
 
 	$('#newTypeButton').click(function() {
 		$('#newTypeInputText').fadeIn('slow');
@@ -77,12 +89,8 @@ $(document).ready(function() {
 				function(xs) {
 					addItemsToTable(xs);
 				});
-	}
-	);
-
-	$('.itemRemover').click(function(e) {
-		console.log('remover click');
 	});
+
 
 	$('#newTypeInputText').keypress(function(e) {
 		const ENTER = 13;
@@ -105,7 +113,7 @@ $(document).ready(function() {
 		.done(function() {
 			appendItemToTable(item);
 			clearForm();
-			$( "#alertSuccess" ).fadeToggle( "slow", function() {
+			$("#alertSuccess").fadeToggle( "slow", function() {
 				$( "#alertSuccess" ).fadeToggle();
 			});
 		});
