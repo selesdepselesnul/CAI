@@ -77,6 +77,7 @@ $(document).ready(function() {
 		console.log(e.which)
 		if(e.which == ENTER) {
 			addOption('#typeInput', $('#newTypeInputText').val());
+			$('#newTypeInputText').val('');		
 			$('#newTypeInputText').fadeOut('slow');
 		}
 	});
