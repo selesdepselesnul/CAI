@@ -32,6 +32,7 @@
 	</div>
 	<table id="itemTable" class="table table-condensed">
 		<tr>
+			<th>id</th>
 			<th>label</th>
 			<th>harga</th>
 			<th>kuantitas</th>

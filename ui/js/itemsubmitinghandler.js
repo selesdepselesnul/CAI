@@ -17,9 +17,16 @@ function addOption(selector, item) {
 function appendItemToTable(item) {
 	$('#itemTable')
 	.append('<tr class="itemRowClass">' 
+		+ makeTableData(item.id)
 		+ makeTableData(item.label) + makeTableData(item.price) 
 		+ makeTableData(item.quantity) + makeTableData(item.discount)
 		+ makeTableData(item.type)
+		+ makeTableData('<button id="edit' + item.id + '" class="btn btn-default">' +
+			'<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>' + 
+			'</button>')
+		+ makeTableData('<button id="remove' + item.id + '" class="btn btn-default">' +
+			'<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>' + 
+			'</button>') 
 		+ '</tr>');
 }
 
@@ -74,8 +81,6 @@ $(document).ready(function() {
 
 	$('#newTypeInputText').keypress(function(e) {
 		const ENTER = 13;
-		console.log('cucok!');
-		console.log(e.which)
 		if(e.which == ENTER) {
 			addOption('#typeInput', $('#newTypeInputText').val());
 			$('#newTypeInputText').val('');		
@@ -84,17 +89,12 @@ $(document).ready(function() {
 	});
 
 	$('#addItemButton').click(function() {
-		var label = $('#label').val(); 
-		var price = $('#price').val();
-		var quantity = $('#quantity').val();
-		var discount = $('#discount').val();
-		var type = $('#typeInput').val();
 		const item = { 
-			label: label, 
-			price: price, 
-			quantity : quantity, 
-			discount: discount, 
-			type: type 
+			label: $('#label').val(), 
+			price: $('#price').val(), 
+			quantity : $('#quantity').val(), 
+			discount: $('#discount').val(), 
+			type: $('#typeInput').val() 
 		};
 		$.post( "http://127.0.0.1:8080/CAI/json/item/new/", item)
 		.done(function() {
