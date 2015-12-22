@@ -25,21 +25,8 @@
 	</button>
 	<br/><br/>
 	<div class="form-inline">
+		<label for="typeFilter">type : </label>
 		<select id="typeFilter" class="typeSelect form-control input-sm">
-		</select>
-		<input type="search" id="searchField" placeholder="cari item..." 
-		class="form-control"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></input>
-		<select class="form-control" id="filterCategory">
-			<option value="byId">berdasarkan Id</option>
-			<option value="byLabel">berdasarkan label</option>
-			<option value="byQuantity">berdasarkan kuantitas</option>
-			<option value="byDiscount">berdasarkan diskon</option>
-			<option value="byType">berdasarkan tipe</option>
-		</select>
-		<select class="form-control" id="filterAction">
-			<option value="delete">lakukan penghapusan</option>
-			<option value="edit">lakukan pengeditan</option>
-			<option value="display">tampilkan</option>
 		</select>
 	</div>
 	<table id="itemTable" class="table table-condensed">
