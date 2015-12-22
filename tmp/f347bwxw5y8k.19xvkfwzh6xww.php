@@ -49,4 +49,4 @@
 		<th>tipe</th>
 	</tr>
 </table>
-<script src={{@BASE.'/'.@UI.'js/itemsubmitinghandler.js'}}></script>
+<script src=<?php echo $BASE.'/'.$UI.'js/itemsubmitinghandler.js'; ?>></script>

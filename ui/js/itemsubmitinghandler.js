@@ -2,40 +2,40 @@ function makeTableData (data) {
 	return '<td>' + data + '</td>'; 
 }
 
-var loadData = function() {
-	$.getJSON( "http://127.0.0.1:8080/CAI/json/item", 
-		function(items) {
-			var types = $.map(items, function(x) {
-				return x.type;
-			});
-			$.unique(types).forEach(function(x) {
-				$('#type')
-				.append('<option value="' + x + '">' + x + '</option>');
-			});
-
-			items.forEach(function(x) {
-				
-				
-				$('#itemTable')
-				.append('<tr>' 
-					+ makeTableData(x.label) + makeTableData(x.price) 
-					+ makeTableData(x.quantity) + makeTableData(x.discount)
-					+ makeTableData(x.type)
-					+ '</tr>');
-			})
+function loadAllItems(action) {
+	$.getJSON( "http://127.0.0.1:8080/CAI/json/item/", 
+		function(xs) {
+			action(xs);
 		});
-	$("#newType").fadeOut();
-};
+}
 
-$(window).load(loadData);
+function addItemsToTable(items) {
+	items.forEach(function(x) {
+		$('#itemTable')
+		.append('<tr>' 
+			+ makeTableData(x.label) + makeTableData(x.price) 
+			+ makeTableData(x.quantity) + makeTableData(x.discount)
+			+ makeTableData(x.type)
+			+ '</tr>');
+	});
+}
+
+$(window).load(function() {
+	loadAllItems(function(xs) {
+		addItemsToTable(xs);
+		const types = $.map(xs, function(x) {
+			return x.type;
+		});
+		$.unique(types).forEach(function(x) {
+			$('.typeSelect')
+			.append('<option value="' + x + '"' + 'class="itemClass' + '"' + '>' 
+				+ x + '</option>');
+		});
+	});
+	$("#newType").fadeOut();
+});
 
 $(document).ready(function() {
-	
-	$('#searchField').on('input', function() {
-		console.log($('#searchField').val());
-		var filterCategory = $('#filterCategory').val();
-		var filterAction = $('#filterAction').val();
-	});
 
 	$('#newTypeButton').click(function() {
 		if($("#newTypeButton").text() === 'baru') {
@@ -47,6 +47,10 @@ $(document).ready(function() {
 			$('#type').fadeIn('slow');
 			$('#newTypeButton').text('baru');
 		}
+	});
+
+	$('#typeFilter').click(function() {
+		console.log($('#typeFilter').val());
 	});
 
 	$('#addItemButton').click(function() {
@@ -67,8 +71,6 @@ $(document).ready(function() {
 				quantity : quantity, 
 				discount: discount, 
 				type: type })
-		.always(function(data) {
-			console.log('nyimpen data cyyn');})
 		.done(function( data ) {
 			$('#itemTable')
 			.append("<tr>" + makeTableData(label) + makeTableData(price)
@@ -81,8 +83,5 @@ $(document).ready(function() {
 			$('#addItemButton')
 			.after('<div class="alert alert-success" role="alert">sukses cyyn</div>');
 		});
-
-		
 	});
-
 });
