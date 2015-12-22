@@ -23,6 +23,7 @@
 		<span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
 		tambah ke inventory
 	</button>
+	<div id="alertSuccess" class="alert alert-success" role="alert">sukses cyyn</div>
 	<br/><br/>
 	<div class="form-inline">
 		<label for="typeFilter">type : </label>

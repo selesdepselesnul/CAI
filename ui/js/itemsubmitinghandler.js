@@ -48,6 +48,7 @@ $(window).load(function() {
 		});
 	});
 	$("#newTypeInputText").hide();
+	$('#alertSuccess').hide();
 });
 
 $(document).ready(function() {
@@ -99,8 +100,9 @@ $(document).ready(function() {
 		.done(function() {
 			appendItemToTable(item);
 			clearForm();
-			$('#addItemButton')
-			.after('<div class="alert alert-success" role="alert">sukses cyyn</div>');
+			$( "#alertSuccess" ).fadeToggle( "slow", function() {
+				$( "#alertSuccess" ).fadeToggle();
+			});
 		});
 	});
 });
