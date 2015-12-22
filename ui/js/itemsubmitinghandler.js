@@ -2,6 +2,11 @@ function makeTableData (data) {
 	return '<td>' + data + '</td>'; 
 }
 
+function addOption(selector, item) {
+	$(selector)
+	.append('<option value="' + item + '">' + item + '</option>');
+}
+
 function loadAllItems(action) {
 	$.getJSON( "http://127.0.0.1:8080/CAI/json/item/", 
 		function(xs) {
@@ -12,7 +17,7 @@ function loadAllItems(action) {
 function addItemsToTable(items) {
 	items.forEach(function(x) {
 		$('#itemTable')
-		.append('<tr>' 
+		.append('<tr class="itemRowClass">' 
 			+ makeTableData(x.label) + makeTableData(x.price) 
 			+ makeTableData(x.quantity) + makeTableData(x.discount)
 			+ makeTableData(x.type)
@@ -21,15 +26,14 @@ function addItemsToTable(items) {
 }
 
 $(window).load(function() {
+	addOption('#typeFilter', 'semua');
 	loadAllItems(function(xs) {
 		addItemsToTable(xs);
 		const types = $.map(xs, function(x) {
 			return x.type;
 		});
 		$.unique(types).forEach(function(x) {
-			$('.typeSelect')
-			.append('<option value="' + x + '"' + 'class="itemClass' + '"' + '>' 
-				+ x + '</option>');
+			addOption('.typeSelect', x);
 		});
 	});
 	$("#newType").fadeOut();
@@ -50,8 +54,19 @@ $(document).ready(function() {
 	});
 
 	$('#typeFilter').click(function() {
-		console.log($('#typeFilter').val());
-	});
+		$('.itemRowClass').remove();
+		const filter = $('#typeFilter').val();
+		if(filter == 'semua')
+			loadAllItems(function(xs) {
+				addItemsToTable(xs);
+			});
+		else
+			$.getJSON('http://127.0.0.1:8080/CAI/json/item/type/eq/' + filter,
+				function(xs) {
+					addItemsToTable(xs);
+				});
+	}
+	);
 
 	$('#addItemButton').click(function() {
 		var label = $('#label').val(); 
