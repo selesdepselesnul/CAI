@@ -47,21 +47,13 @@ $(window).load(function() {
 			addOption('.typeSelect', x);
 		});
 	});
-	$("#newType").fadeOut();
+	$("#newTypeInputText").hide();
 });
 
 $(document).ready(function() {
 
 	$('#newTypeButton').click(function() {
-		if($("#newTypeButton").text() === 'baru') {
-			$('#newType').fadeIn('slow');
-			$('#type').fadeOut('slow');
-			$('#newTypeButton').text('lama');
-		} else {
-			$('#newType').fadeOut('slow');
-			$('#type').fadeIn('slow');
-			$('#newTypeButton').text('baru');
-		}
+		$('#newTypeInputText').fadeIn('slow');
 	});
 
 	$('#typeFilter').click(function() {
@@ -78,6 +70,16 @@ $(document).ready(function() {
 				});
 	}
 	);
+
+	$('#newTypeInputText').keypress(function(e) {
+		const ENTER = 13;
+		console.log('cucok!');
+		console.log(e.which)
+		if(e.which == ENTER) {
+			addOption('#typeInput', $('#newTypeInputText').val());
+			$('#newTypeInputText').fadeOut('slow');
+		}
+	});
 
 	$('#addItemButton').click(function() {
 		var label = $('#label').val(); 
