@@ -1,121 +1,124 @@
-function clearForm() {
-	$('#label').val(''); 
-	$('#price').val('');
-	$('#quantity').val('');
-	$('#discount').val('');
-}
+/**
+ * @author : Moch Deden (https://github.com/selesdepselesnul)
+ */
+ $(document).ready(function() {
 
-function makeTableData (data) {
-	return '<td>' + data + '</td>'; 
-}
+ 	function clearForm() {
+ 		$('#label').val(''); 
+ 		$('#price').val('');
+ 		$('#quantity').val('');
+ 		$('#discount').val('');
+ 	}
 
-function addOption(selector, item) { 
-	$(selector)
-	.append('<option value="' + item + '">' + item + '</option>');
-}
+ 	function makeTableData (data) {
+ 		return '<td>' + data + '</td>'; 
+ 	}
 
-function removeItem() {
-	console.log('remove cyyn!');
-}
+ 	function addOption(selector, item) { 
+ 		$(selector)
+ 		.append('<option value="' + item + '" class="option-class">' 
+ 			+ item + '</option>');
+ 	}
 
-function editItem() {
-	console.log('edit cyyn!');
-}
+ 	function appendItemToTable(item) {
+ 		$('#itemTable')
+ 		.append('<tr class="itemRowClass">' 
+ 			+ makeTableData(item.id)
+ 			+ makeTableData(item.label) 
+ 			+ makeTableData(item.price) 
+ 			+ makeTableData(item.quantity) 
+ 			+ makeTableData(item.discount)
+ 			+ makeTableData(item.type)
+ 			+ makeTableData('<button id="edit_'+ item.id + '" class="edit-button btn btn-default">' 
+ 				+ '<span class="glyphicon glyphicon-edit"></span>' 
+ 				+ '</button>')
+ 			+ makeTableData('<button id="remove_'+ item.id + '" class="remove-button btn btn-default">' 
+ 				+ '<span class="glyphicon glyphicon-trash"></span>' 
+ 				+ '</button>') 
+ 			+ '</tr>');
 
-function appendItemToTable(item) {
-	$('#itemTable')
-	.append('<tr class="itemRowClass">' 
-		+ makeTableData(item.id)
-		+ makeTableData(item.label) + makeTableData(item.price) 
-		+ makeTableData(item.quantity) + makeTableData(item.discount)
-		+ makeTableData(item.type)
-		+ makeTableData('<button id="edit' + item.id + '" class="btn btn-default" onclick="editItem();">' +
-			'<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>' + 
-			'</button>')
-		+ makeTableData('<button id="remove' + item.id 
-			+ '" class="item-remover btn btn-default" onclick="removeItem();">' 
-			+ '<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>' 
-			+ '</button>') 
-		+ '</tr>');
-}
+ 		$('.remove-button').click(function() {
+ 			console.log('remove button clicked');
+ 			console.log($(this).attr('id'));
+ 		});
 
-function loadAllItems(action) {
-	$.getJSON( "http://127.0.0.1:8080/CAI/json/item/", 
-		function(xs) {
-			action(xs);
-		});
-}
+ 		$('.edit-button').click(function() {
+ 			console.log('edit button clicked');
+ 			console.log($(this).attr('id'));
+ 		});
+ 	}
 
-function addItemsToTable(items) {
-	items.forEach(function(x) {
-		appendItemToTable(x);
-	});
-}
+ 	function loadAllItems(action) {
+ 		$.getJSON( "http://127.0.0.1:8080/CAI/json/item/", 
+ 			function(xs) {
+ 				console.log(xs);
+ 				action(xs);
+ 			});
+ 	}
 
-$(window).load(function() {
-	addOption('#typeFilter', 'semua');
-	loadAllItems(function(xs) {
-		addItemsToTable(xs);
-		const types = $.map(xs, function(x) {
-			return x.type;
-		});
-		$.unique(types).forEach(function(x) {
-			addOption('.typeSelect', x);
-		});
-	});
-	$('#newTypeInputText').hide();
-	$('#alertSuccess').hide();
-});
+ 	function addItemsToTable(items) {
+ 		$.each(items, function(index, value) {
+ 			appendItemToTable(value);
+ 		});
+ 	}
+ 	function loadAllProperties() {
+ 		addOption('#typeFilter', 'semua');
+ 		loadAllItems(function(xs) {
+ 			const types = $.map(xs, function(x) {
+ 				return x.type;
+ 			});
+ 			$.each($.unique(types), function(index, value) {
+ 				addOption('.typeSelect', value);
+ 			});
+ 			addItemsToTable(xs);
+ 		});
+ 		$('#newTypeInputText').hide();
+ 		$('#alertSuccess').hide();
+ 	};
 
-$(document).ready(function() {
-	
-	$('.item-remover').click(function() {
-		console.log('remove cyyn!');
-	})
+ 	loadAllProperties();
 
-	$('#newTypeButton').click(function() {
-		$('#newTypeInputText').fadeIn('slow');
-	});
+ 	$('#newTypeButton').click(function() {
+ 		$('#newTypeInputText').fadeIn('slow');
+ 	});
 
-	$('#typeFilter').click(function() {
-		$('.itemRowClass').remove();
-		const filter = $('#typeFilter').val();
-		if(filter == 'semua')
-			loadAllItems(function(xs) {
-				addItemsToTable(xs);
-			});
-		else
-			$.getJSON('http://127.0.0.1:8080/CAI/json/item/type/eq/' + filter,
-				function(xs) {
-					addItemsToTable(xs);
-				});
-	});
+ 	$('#typeFilter').click(function() {
+ 		$('.itemRowClass').remove();
+ 		const filter = $('#typeFilter').val();
+ 		if(filter == 'semua')
+ 			loadAllItems(function(xs) {
+ 				addItemsToTable(xs);
+ 			});
+ 		else
+ 			$.getJSON('http://127.0.0.1:8080/CAI/json/item/type/eq/' 
+ 				+ filter, function(xs) {
+ 					addItemsToTable(xs);
+ 				});
+ 	});
 
+ 	$('#newTypeInputText').keypress(function(e) {
+ 		const ENTER = 13;
+ 		if(e.which == ENTER) {
+ 			addOption('#typeInput', $('#newTypeInputText').val());
+ 			$('#newTypeInputText').val('');		
+ 			$('#newTypeInputText').fadeOut('slow');
+ 		}
+ 	});
 
-	$('#newTypeInputText').keypress(function(e) {
-		const ENTER = 13;
-		if(e.which == ENTER) {
-			addOption('#typeInput', $('#newTypeInputText').val());
-			$('#newTypeInputText').val('');		
-			$('#newTypeInputText').fadeOut('slow');
-		}
-	});
-
-	$('#addItemButton').click(function() {
-		const item = { 
-			label: $('#label').val(), 
-			price: $('#price').val(), 
-			quantity : $('#quantity').val(), 
-			discount: $('#discount').val(), 
-			type: $('#typeInput').val() 
-		};
-		$.post( "http://127.0.0.1:8080/CAI/json/item/new/", item)
-		.done(function() {
-			appendItemToTable(item);
-			clearForm();
-			$("#alertSuccess").fadeToggle( "slow", function() {
-				$( "#alertSuccess" ).fadeToggle();
-			});
-		});
-	});
-});
+ 	$('#addItemButton').click(function() {
+ 		$.post( "http://127.0.0.1:8080/CAI/json/item/new/", { 
+ 			label: $('#label').val(), 
+ 			price: $('#price').val(), 
+ 			quantity : $('#quantity').val(), 
+ 			discount: $('#discount').val(), 
+ 			type: $('#typeInput').val() 
+ 		}).done(function() {
+ 			loadAllProperties();
+ 			clearForm();
+ 			$('.option-class').remove();
+ 			$("#alertSuccess").fadeToggle( "slow", function() {
+ 				$( "#alertSuccess" ).fadeToggle();
+ 			});
+ 		});
+ 	});
+ });

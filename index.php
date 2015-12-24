@@ -60,7 +60,7 @@ class Boot {
 		$this->app->route('POST /login', 'AppController->postLogin');
 		$this->app->route('GET @get_inventory:/inventory', 
 			'AppController->getInventory');
-		$this->app->route('GET /cashier', 
+		$this->app->route('GET @get_cashier:/cashier', 
 			'AppController->getCashier');
 	}
 

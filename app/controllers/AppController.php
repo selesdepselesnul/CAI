@@ -7,7 +7,8 @@ class AppController {
 	}
 
 	public function getInventory($f3) {
-		$this->render('inventory.html');
+		Base::Instance()->set('content', 'inventory.html');
+		echo \Template::instance()->render('layout.html');
 	}
 
 	public function getHome($f3) {
@@ -17,7 +18,7 @@ class AppController {
 	}
 
 	public function getCashier($f3) {
-		echo "cashier";
+		$this->render('cashier.html');
 	}
 
 
