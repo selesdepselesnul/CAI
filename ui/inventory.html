@@ -4,7 +4,7 @@
 <div class="form-group">
 	<div class="form-inline">
 		<label for="type">tipe</label>
-		<select id="typeInput" class="typeSelect form-control input-sm">
+		<select id="typeInput" class="form-control input-sm">
 		</select>
 		<input type="text" id="newTypeInputText" hidden
 		placeholder="tipe baru" class="form-control"></input>
@@ -26,7 +26,7 @@
 	<br/><br/>
 	<div class="form-inline">
 		<label for="typeFilter">type : </label>
-		<select id="typeFilter" class="typeSelect form-control input-sm">
+		<select id="typeFilter" class="form-control input-sm">
 		</select>
 	</div>
 	<table id="itemTable" class="table table-condensed">
