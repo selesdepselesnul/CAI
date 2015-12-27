@@ -123,7 +123,7 @@
           $('#type_'+ itemId).replaceWith(
             wrapInsideInput('type', 'text'));
 
- 
+          
           $(editorButton).replaceWith(
            '<span class="glyphicon glyphicon-ok" id="resubmitingButton_' 
            + itemId + '"></span>');

@@ -16,7 +16,7 @@
 			<input type="number" placeholder="harga" id="price" class="form-control"></input>
 			<input type="number" placeholder="kuantitas" id="quantity" class="form-control">
 		</input>
-		<input type="text" placeholder="diskon" id="discount" class="form-control" ></input>
+		<input type="number" placeholder="diskon" id="discount" class="form-control" ></input>
 	</div>
 	<button id="addItemButton" class="btn btn-primary">
 		<span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
