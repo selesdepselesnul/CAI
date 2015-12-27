@@ -98,12 +98,11 @@
           });
         });
 
-      $('.edit-button').click(function() {
+      $('#edit_'+ item.id).click(function() {
         const editorButton = $(this).children().get(0);
         const id = splitId(editorButton.id);
         const editorKind = id.label;
         const itemId = id.number;
-        console.log(editorKind);
 
         const wrapInsideInput = function(name, type) {
           const nameId = name + '_' + itemId;
@@ -112,8 +111,7 @@
             + textContent + '" type="' + type + '" class="form-control"/>', nameId);
         };
         
-        if(editorKind === 'editingButton') {
-          console.log($('#label_'+ itemId).get());
+        if(editorKind == 'editingButton') {
           $('#label_'+ itemId).replaceWith(
             wrapInsideInput('label', 'text'));
           $('#price_'+ itemId).replaceWith(
@@ -125,6 +123,7 @@
           $('#type_'+ itemId).replaceWith(
             wrapInsideInput('type', 'text'));
 
+ 
           $(editorButton).replaceWith(
            '<span class="glyphicon glyphicon-ok" id="resubmitingButton_' 
            + itemId + '"></span>');
@@ -137,23 +136,25 @@
           $(editorButton).replaceWith(
             '<span class="glyphicon glyphicon-pencil" id="editingButton_' 
             + itemId + '"></span>');
-          console.log($('#label_'+itemId+'_input'));
-          $.post( BASE_API + 'item/' + itemId + '/edit/', { 
+
+          const unwrap = function(name) {
+            return makeTableData($(name).val(), name.split()[0]+'_'+itemId);
+          };
+          console.log('cucok cyyaobbbbo!');
+          $.when($.post( BASE_API + 'item/' + itemId + '/edit/', { 
             label: $(label).val(), 
             price: $(price).val(), 
             quantity : $(quantity).val(), 
             discount: $(discount).val(), 
             type: $(type).val() 
+          })).done(function(_) {
+            $(label).replaceWith(unwrap(label));
+            $(price).replaceWith(unwrap(price));
+            $(quantity).replaceWith(unwrap(quantity));
+            $(discount).replaceWith(unwrap(discount));
+            $(type).replaceWith(unwrap(type));  
           });
-          const unwrap = function(name) {
-            return makeTableData($(name).val(), name.split()[0]+'_'+itemId);
-          };
-          $(label).replaceWith(unwrap(label));
-          $(price).replaceWith(unwrap(price));
-          $(quantity).replaceWith(unwrap(quantity));
-          $(discount).replaceWith(unwrap(discount));
-          $(type).replaceWith(unwrap(type));
-          console.log($('#label_'+itemId+'_input').val());
+
         }
       });
 }
