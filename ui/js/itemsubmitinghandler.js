@@ -89,13 +89,16 @@
           + '</button>') 
         + '</tr>');
 
-      $('.remove-button').click(function() {
-        const itemId = splitId($(this).attr('id')).number; 
-        $.get(BASE_API + 'item/' 
+      $('#remove_'+ item.id).click(function() {
+        const itemId = splitId($(this).attr('id')).number;
+        console.log('cucok remove is great bro sumpeh dah coy!');
+        $.when($.get(BASE_API + 'item/' 
           +  itemId
-          +'/remove/').done(function() {
-            $('#item_' + itemId).remove();    
-          });
+          +'/remove/')).done(function() {
+          clearTypes();
+          $('.item-row-class').remove();
+          loadAllProperties();    
+        });
         });
 
       $('#edit_'+ item.id).click(function() {
@@ -110,7 +113,7 @@
           return makeTableData('<input id="' + nameId  + '_input" value="' 
             + textContent + '" type="' + type + '" class="form-control"/>', nameId);
         };
-        
+
         if(editorKind == 'editingButton') {
           $('#label_'+ itemId).replaceWith(
             wrapInsideInput('label', 'text'));
@@ -123,7 +126,7 @@
           $('#type_'+ itemId).replaceWith(
             wrapInsideInput('type', 'text'));
 
-          
+
           $(editorButton).replaceWith(
            '<span class="glyphicon glyphicon-ok" id="resubmitingButton_' 
            + itemId + '"></span>');
