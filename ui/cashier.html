@@ -1,107 +1,4 @@
-﻿<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <!--[if IE]>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <![endif]-->
-    <title>Mesin Kasir</title>
-    <!-- BOOTSTRAP CORE STYLE  -->
-    <link href="assets/css/bootstrap.css" rel="stylesheet" />
-    <!-- FONT AWESOME ICONS  -->
-    <link href="assets/css/font-awesome.css" rel="stylesheet" />
-    <!-- CUSTOM STYLE  -->
-    <link href="assets/css/style.css" rel="stylesheet" />
-     <!-- HTML5 Shiv and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-</head>
-<body>
-    <header>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <strong>Email: </strong>iqbalkurniawan934@gmail.com
-                    &nbsp;&nbsp;
-                    <strong>Support: </strong>0896 2426 9426
-                </div>
-
-            </div>
-        </div>
-    </header>
-    <!-- HEADER END-->
-    <div class="navbar navbar-inverse set-radius-zero">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.html">
-
-                    <img src="assets/img/logo.png" />
-                </a>
-
-            </div>
-
-            <div class="left-div">
-                <div class="user-settings-wrapper">
-                    <ul class="nav">
-
-                        <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
-                                <span class="glyphicon glyphicon-user" style="font-size: 25px;"></span>
-                            </a>
-                            <div class="dropdown-menu dropdown-settings">
-                                <div class="media">
-                                    <a class="media-left" href="#">
-                                        <img src="assets/img/64-64.jpg" alt="" class="img-rounded" />
-                                    </a>
-                                    <div class="media-body">
-                                        <h4 class="media-heading">Admin </h4>
-                                       
-                                    </div>
-                                </div>
-                                <hr />
-                                <h5><strong>Personal Bio : </strong></h5>
-                                Seorang Pemilik Toko
-                                <hr />
-                                <a href="#" class="btn btn-info btn-sm">Full Profile</a>&nbsp; <a href="login.html" class="btn btn-danger btn-sm">Logout</a>
-
-                            </div>
-                        </li>
-
-
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- LOGO HEADER END-->
-    <section class="menu-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="navbar-collapse collapse ">
-                        <ul id="menu-top" class="nav navbar-nav navbar-right">
-                            <li><a class="menu-top-active" href="{{ $BASE }}">Dashboard</a></li>
-
-                        </ul>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-    <!-- MENU SECTION END-->
-    <div class="content-wrapper">
+﻿    <div class="content-wrapper">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -112,163 +9,139 @@
             </div>
             <div class="row">
                 <div class="col-md-6">
-                     <!--    Context Classes  -->
-                    <div class="panel panel-default">
-                       
-                        <div class="panel-heading">
-                            Transaksi
-                        </div>
-                        
-                        <div class="panel-body">
-                            <div class="table-responsive">
-                                <table class="table">
+                   <!--    Context Classes  -->
+                   <div class="panel panel-default">
+
+                    <div class="panel-heading">
+                        Transaksi
+                    </div>
+                    
+                    <div class="panel-body">
+                        <div class="table-responsive">
+                            <table class="table">
+
+                                <tbody>
+                                    <tr class="success">
+                                        <td>NO</td>
+                                        <td>:</td>
+                                        <td>0001</td>
+                                    </tr>
+                                    <tr class="info">
+                                        <td>ID TRANSAKSI</td>
+                                        <td>:</td>
+                                        <td>TR001</td>
+                                    </tr>
+                                    <tr class="warning">
+                                        <td>TGL TRANSAKSI</td>
+                                        <td>:</td>
+                                        <td>01-12-2015 / 22.00 WIB</td>
+                                    </tr>
                                     
-                                    <tbody>
-                                        <tr class="success">
-                                            <td>NO</td>
-                                            <td>:</td>
-                                            <td>0001</td>
-                                        </tr>
-                                        <tr class="info">
-                                            <td>ID TRANSAKSI</td>
-                                            <td>:</td>
-                                            <td>TR001</td>
-                                        </tr>
-                                        <tr class="warning">
-                                            <td>TGL TRANSAKSI</td>
-                                            <td>:</td>
-                                            <td>01-12-2015 / 22.00 WIB</td>
-                                        </tr>
-                                        
-                                    </tbody>
-                                </table>
-                            </div>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
-                    <!--  end  Context Classes  -->
                 </div>
-
-                <div class="col-md-6">
-                            <form role="form" style="margin-top:-2%">
-                                        
-                                        <div class="form-group has-warning">
-                                           Nama Barang
-                                            <input type="text" class="form-control" id="warning" />
-                                        </div>
-                                        <div class="form-group has-error">
-                                            Qty Barang
-                                            <input type="text" class="form-control" id="error" />
-                                        </div>
-                                        <a href="#" class="btn btn-primary">Enter</a>
-                            </form>
-                </div>
+                <!--  end  Context Classes  -->
             </div>
-            <div class="row">
-                <div class="col-md-12">
-                  <!--   Kitchen Sink -->
-                    <div class="panel panel-default">
-                        
-                        <div class="panel-body">
-                            <div class="table-responsive">
-                                <table class="table table-striped table-bordered table-hover">
-                                    <thead>
-                                        <tr>
-                                            <th>No</th>
-                                            <th>ID</th>
-                                            <th>Nama Barang</th>
-                                            <th>Qty</th>
-                                            <th>Harga</th>
-                                            <th>Sub Total</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>BR001</td>
-                                            <td>Pepsodent</td>
-                                            <td>1</td>
-                                            <td>Rp.2000</td>
-                                            <td>Rp.2000</td>
-                                            <td align="center">
-                                                <button class="btn btn-primary"><i class="fa fa-edit "></i></button>
-                                                <button class="btn btn-danger"><i class="fa fa-pencil"></i></button>
-                                            </td>
-                                        </tr>
-                                         <tr>
-                                            <td>2</td>
-                                            <td>BR002</td>
-                                            <td>Ciptadent</td>
-                                            <td>1</td>
-                                            <td>Rp.2000</td>
-                                            <td>Rp.2000</td>
-                                             <td align="center">
-                                                <button class="btn btn-primary"><i class="fa fa-edit "></i></button>
-                                                <button class="btn btn-danger"><i class="fa fa-pencil"></i></button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>3</td>
-                                            <td>BR003</td>
-                                            <td>Permen Sikil</td>
-                                            <td>2</td>
-                                            <td>Rp.1000</td>
-                                            <td>Rp.2000</td>
-                                             <td align="center">
-                                                <button class="btn btn-primary"><i class="fa fa-edit "></i></button>
-                                                <button class="btn btn-danger"><i class="fa fa-pencil"></i></button>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                <h4 class="page-head-line"></h4>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-8" >
-                                <h3>Jumlah</h3>
-                                </div>
-                                <div class="col-md-1">
-                                <h3>=</h3>
-                                </div>
-                                <div class="col-md-3"  >
-                                <h3>Rp 6.000</h3>
-                                </div>
-                            </div>
-                            <br>
-                            <div class="row"  >
-                            <div class="col-md-10" align="right">
-                             <a href="#" class="btn btn-success">Simpan</a>
-                            </div>
-                            </div>
-                        </div>
 
-                    </div>
-                     <!-- End  Kitchen Sink -->
+            <div class="col-md-6">
+                <form role="form" style="margin-top:-2%">
+
+                    <div class="form-group has-warning">
+                     Nama Barang
+                     <input type="text" class="form-control" id="warning" />
+                 </div>
+                 <div class="form-group has-error">
+                    Qty Barang
+                    <input type="text" class="form-control" id="error" />
                 </div>
-                
-            </div>
+                <a href="#" class="btn btn-primary">Enter</a>
+            </form>
         </div>
     </div>
-    <!-- CONTENT-WRAPPER SECTION END-->
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    &copy; 2015 Warung | By : CCP</a>
-                </div>
+    <div class="row">
+        <div class="col-md-12">
+          <!--   Kitchen Sink -->
+          <div class="panel panel-default">
 
-            </div>
-        </div>
-    </footer>
-    <!-- FOOTER SECTION END-->
-    <!-- JAVASCRIPT AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
-    <!-- CORE JQUERY SCRIPTS -->
-    <script src="assets/js/jquery-1.11.1.js"></script>
-    <!-- BOOTSTRAP SCRIPTS  -->
-    <script src="assets/js/bootstrap.js"></script>
-</body>
-</html>
+            <div class="panel-body">
+                <div class="table-responsive">
+                    <table class="table table-striped table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>ID</th>
+                                <th>Nama Barang</th>
+                                <th>Qty</th>
+                                <th>Harga</th>
+                                <th>Sub Total</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>BR001</td>
+                                <td>Pepsodent</td>
+                                <td>1</td>
+                                <td>Rp.2000</td>
+                                <td>Rp.2000</td>
+                                <td align="center">
+                                    <button class="btn btn-primary"><i class="fa fa-edit "></i></button>
+                                    <button class="btn btn-danger"><i class="fa fa-pencil"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>BR002</td>
+                                <td>Ciptadent</td>
+                                <td>1</td>
+                                <td>Rp.2000</td>
+                                <td>Rp.2000</td>
+                                <td align="center">
+                                    <button class="btn btn-primary"><i class="fa fa-edit "></i></button>
+                                    <button class="btn btn-danger"><i class="fa fa-pencil"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>BR003</td>
+                                <td>Permen Sikil</td>
+                                <td>2</td>
+                                <td>Rp.1000</td>
+                                <td>Rp.2000</td>
+                                <td align="center">
+                                    <button class="btn btn-primary"><i class="fa fa-edit "></i></button>
+                                    <button class="btn btn-danger"><i class="fa fa-pencil"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4 class="page-head-line"></h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8" >
+                        <h3>Jumlah</h3>
+                    </div>
+                    <div class="col-md-1">
+                        <h3>=</h3>
+                    </div>
+                    <div class="col-md-3"  >
+                        <h3>Rp 6.000</h3>
+                    </div>
+                </div>
+                <br>
+                <div class="row"  >
+                    <div class="col-md-10" align="right">
+                       <a href="#" class="btn btn-success">Simpan</a>
+                   </div>
+               </div>
+           </div>
+
+       </div>
+       <!-- End  Kitchen Sink -->

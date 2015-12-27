@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	
 	<meta charset="<?php echo $ENCODING; ?>" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 	<meta name="description" content="" />
@@ -14,19 +13,15 @@
 	<link href="<?php echo $UI.'css/font-awesome.css'; ?>" rel="stylesheet" />
 	<!-- CUSTOM STYLE  -->
 	<link href="<?php echo $UI.'css/style.css'; ?>" rel="stylesheet" />
-
-	
 </head>
-
 <body>
-
 	<header>
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
-					<strong>Email: </strong>iqbalkurniawan934@gmail.com
+					<strong>Email: </strong>cucok@sekali.com
 					&nbsp;&nbsp;
-					<strong>Support: </strong>0896 2426 9426
+					<strong>Support: </strong>07 004 007 002
 				</div>
 
 			</div>
@@ -72,7 +67,7 @@
 								<h5><strong>Personal Bio : </strong></h5>
 								Seorang Pemilik Toko
 								<hr />
-								<a href="#" class="btn btn-info btn-sm">Full Profile</a>&nbsp; <a href="login.html" class="btn btn-danger btn-sm">Logout</a>
+								<a href="#" class="btn btn-info btn-sm">Full Profile</a>&nbsp; <a href="<?php echo $BASE.'/logout'; ?>" class="btn btn-danger btn-sm">Logout</a>
 
 							</div>
 						</li>

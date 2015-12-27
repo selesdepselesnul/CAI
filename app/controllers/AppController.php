@@ -18,9 +18,9 @@ class AppController {
 	}
 
 	public function getCashier($f3) {
-		$this->render('cashier.html');
+		Base::Instance()->set('content', 'cashier.html');
+		echo \Template::instance()->render('layout.html');
 	}
-
 
 	private function renderIndexOrElse($run) {
 		Base::Instance()->set('content', 'home.html');

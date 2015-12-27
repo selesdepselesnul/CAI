@@ -29,13 +29,15 @@
 		<select id="typeFilter" class="form-control input-sm">
 		</select>
 	</div>
-	<table id="itemTable" class="table table-condensed">
-		<tr>
-			<th>id</th>
-			<th>label</th>
-			<th>harga</th>
-			<th>kuantitas</th>
-			<th>diskon</th>
-			<th>tipe</th>
-		</tr>
-	</table>
+	<div class="table-responsive">
+		<table id="itemTable" class="table table-condensed">
+			<tr>
+				<th>id</th>
+				<th>label</th>
+				<th>harga</th>
+				<th>kuantitas</th>
+				<th>diskon</th>
+				<th>tipe</th>
+			</tr>
+		</table>
+	</div>

@@ -1,0 +1,990 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"edit",
+				"editorButton"
+			],
+			[
+				"ed",
+				"editorKind"
+			],
+			[
+				"edi",
+				"editorButton"
+			],
+			[
+				"con",
+				"console"
+			],
+			[
+				"remo",
+				"removeButton"
+			],
+			[
+				"it",
+				"itemId"
+			],
+			[
+				"rem",
+				"removeItemId"
+			],
+			[
+				"do",
+				"document"
+			],
+			[
+				"d",
+				"document"
+			],
+			[
+				"doubl",
+				"doubleLinkedListOp"
+			],
+			[
+				"fo",
+				"for	for (…) {…}"
+			],
+			[
+				"in",
+				"insertAfterButton"
+			],
+			[
+				"doub",
+				"doubleLinkedListOperation"
+			],
+			[
+				"di",
+				"displayAllButton"
+			],
+			[
+				"dele",
+				"deletePostInput"
+			],
+			[
+				"de",
+				"deletePostInput"
+			],
+			[
+				"i",
+				"insertAfterItemInput"
+			],
+			[
+				"ins",
+				"insertAfterPivot"
+			],
+			[
+				"inse",
+				"insertAfterPivotInput"
+			],
+			[
+				"s",
+				"selectedDoubleLinkedList"
+			],
+			[
+				"op",
+				"option	Tag"
+			],
+			[
+				"new",
+				"newItem"
+			],
+			[
+				"Do",
+				"DoubleNode"
+			],
+			[
+				"f",
+				"for	for (…) {…}"
+			],
+			[
+				"for",
+				"for	for (…) {…}"
+			],
+			[
+				"pr",
+				"prototype"
+			],
+			[
+				"cas",
+				"cashier"
+			],
+			[
+				"In",
+				"Instance"
+			],
+			[
+				"lo",
+				"log"
+			],
+			[
+				"cli",
+				"clicked"
+			],
+			[
+				"clear",
+				"clearTypes"
+			],
+			[
+				"add",
+				"addTypes"
+			],
+			[
+				"ty",
+				"type-input-class"
+			],
+			[
+				"fi",
+				"type-filter-class"
+			],
+			[
+				"type",
+				"typeInput"
+			],
+			[
+				"cla",
+				"className"
+			],
+			[
+				"optio",
+				"option-class"
+			],
+			[
+				"co",
+				"console"
+			],
+			[
+				"ite",
+				"itemId"
+			],
+			[
+				"re",
+				"remove"
+			],
+			[
+				"cl",
+				"className"
+			],
+			[
+				"load",
+				"loadAllProperties"
+			],
+			[
+				"loa",
+				"loadAllProperties"
+			],
+			[
+				"pro",
+				"productType"
+			],
+			[
+				"val",
+				"value"
+			],
+			[
+				"c",
+				"console"
+			],
+			[
+				"Co",
+				"CircularDoubleLinkedList"
+			],
+			[
+				"p",
+				"prev"
+			],
+			[
+				"t",
+				"this"
+			],
+			[
+				"n",
+				"null"
+			],
+			[
+				"e",
+				"echo"
+			],
+			[
+				"file",
+				"file_name"
+			],
+			[
+				"id",
+				"idName"
+			],
+			[
+				"ad",
+				"addItemsToTable"
+			],
+			[
+				"item",
+				"itemRemover"
+			],
+			[
+				"al",
+				"alertSuccess"
+			],
+			[
+				"aler",
+				"alert-success"
+			],
+			[
+				"va",
+				"val"
+			],
+			[
+				"app",
+				"appendItemToTable"
+			],
+			[
+				"get",
+				"getJSON"
+			],
+			[
+				"ini",
+				"initAppController"
+			],
+			[
+				"initI",
+				"initItemTransactionController"
+			],
+			[
+				"print",
+				"print_r"
+			],
+			[
+				"php",
+				"phpcredits"
+			],
+			[
+				"lin",
+				"lineInt"
+			],
+			[
+				"ma",
+				"makeTableData"
+			],
+			[
+				"li",
+				"linkedList"
+			],
+			[
+				"E",
+				"EmptyList"
+			],
+			[
+				"a",
+				"all"
+			],
+			[
+				"del",
+				"deleteListAfter"
+			],
+			[
+				"fade",
+				"fadeOut"
+			],
+			[
+				"u",
+				"uniqueLabels"
+			],
+			[
+				"l",
+				"log"
+			],
+			[
+				"el",
+				"elem"
+			],
+			[
+				"getIte",
+				"getItemWhere"
+			],
+			[
+				"ne",
+				"new_item"
+			],
+			[
+				"is_n",
+				"is_null"
+			],
+			[
+				"tr",
+				"transactionTime"
+			],
+			[
+				"getItem",
+				"getItemsByKey"
+			],
+			[
+				"def",
+				"define"
+			],
+			[
+				"js",
+				"json_decode"
+			],
+			[
+				"req",
+				"request_body"
+			],
+			[
+				"dis",
+				"discount"
+			],
+			[
+				"Item",
+				"ItemFormController"
+			],
+			[
+				"ac",
+				"action	Attr"
+			],
+			[
+				"filter",
+				"filterDateTime"
+			],
+			[
+				"conf",
+				"configPath"
+			],
+			[
+				"rou",
+				"routes"
+			],
+			[
+				"stat",
+				"static"
+			],
+			[
+				"q",
+				"quantity"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"user",
+				"username"
+			],
+			[
+				"ren",
+				"render"
+			],
+			[
+				"pass",
+				"password"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "itemsubmitinghandler.js",
+			"settings":
+			{
+				"buffer_size": 4634,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 232.0,
+		"last_filter": "save",
+		"selected_items":
+		[
+			[
+				"save",
+				"File: Save All"
+			],
+			[
+				"inde",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"sa",
+				"File: Save All"
+			],
+			[
+				"conve",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"savela",
+				"File: Save All"
+			],
+			[
+				"savel",
+				"File: Save All"
+			],
+			[
+				"conver",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"iden",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"saveall",
+				"File: Save All"
+			],
+			[
+				"projec",
+				"Project: Save As"
+			],
+			[
+				"sav",
+				"File: Save All"
+			],
+			[
+				"savell",
+				"File: Save All"
+			],
+			[
+				"saveal",
+				"File: Save All"
+			],
+			[
+				"save All",
+				"File: Save All"
+			],
+			[
+				"set syntax: js",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"savea",
+				"File: Save All"
+			]
+		],
+		"width": 467.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/morrisseymarr/lampstack-7.0.0-0/apache2/htdocs/CAI"
+	],
+	"file_history":
+	[
+		"/home/morrisseymarr/lampstack-7.0.0-0/apache2/htdocs/CAI/tmp/2kyeu4npv3k0o.15vhfgn9gmm8s.php",
+		"/home/morrisseymarr/lampstack-7.0.0-0/apache2/htdocs/e-upb/index.php",
+		"/home/morrisseymarr/lampstack-7.0.0-0/apache2/htdocs/e-upb/application/config/database.php",
+		"/home/morrisseymarr/lampstack-7.0.0-0/apache2/htdocs/e-upb/application/controllers/Test.php",
+		"/home/morrisseymarr/lampstack-7.0.0-0/apache2/htdocs/e-upb/application/controllers/Page.php",
+		"/home/morrisseymarr/lampstack-7.0.0-0/apache2/htdocs/e-upb/system/core/Model.php",
+		"/home/morrisseymarr/lampstack-7.0.0-0/apache2/htdocs/e-upb/application/models/News_Model.php",
+		"/home/morrisseymarr/lampstack-7.0.0-0/apache2/htdocs/e-upb/application/controllers/News.php",
+		"/home/morrisseymarr/lampstack-7.0.0-0/apache2/htdocs/e-upb/application/cache/.htaccess",
+		"/home/morrisseymarr/lampstack-7.0.0-0/apache2/htdocs/e-upb/application/.htaccess",
+		"/home/morrisseymarr/lampstack-7.0.0-0/apache2/htdocs/e-upb/system/helpers/html_helper.php",
+		"/home/morrisseymarr/lampstack-7.0.0-0/apache2/htdocs/e-upb/application/index.html",
+		"/home/morrisseymarr/lampstack-7.0.0-0/apache2/htdocs/e-upb/application/views/welcome_message.php",
+		"/home/morrisseymarr/lampstack-5.5.30-1/apache2/htdocs/CAI/sql/construct.sql",
+		"/home/morrisseymarr/lampstack-5.5.30-1/apache2/htdocs/CAI/app/controllers/AppController.php",
+		"/home/morrisseymarr/lampstack-5.5.30-1/apache2/htdocs/CAI/ui/cashier.html",
+		"/home/morrisseymarr/lampstack-5.5.30-1/apache2/htdocs/CAI/ui/layout.html",
+		"/home/morrisseymarr/lampstack-5.5.30-1/apache2/htdocs/CAI/ui/inventory.html",
+		"/home/morrisseymarr/lampstack-5.5.30-1/apache2/htdocs/CAI/index.php",
+		"/home/morrisseymarr/lampstack-5.5.30-1/apache2/htdocs/CAI/ui/css/base.css",
+		"/home/morrisseymarr/lampstack-5.5.30-1/apache2/htdocs/CAI/ui/js/itemsubmitinghandler.js",
+		"/home/morrisseymarr/workspace/dll-s/DoublyLinkedList.js",
+		"/home/morrisseymarr/workspace/dll-s/main.html",
+		"/home/morrisseymarr/cucok_sekali/mantab.sh",
+		"/home/morrisseymarr/lampstack-5.5.30-1/apache2/htdocs/CAI/app/models/ItemTransaction.php",
+		"/home/morrisseymarr/lampstack-5.5.30-1/apache2/htdocs/CAI/app/models/Admin.php",
+		"/home/morrisseymarr/mantab_cucok/mantab.sh",
+		"/home/morrisseymarr/lampstack-5.5.30-1/apache2/htdocs/CAI/app/controllers/rests/ItemController.php",
+		"/home/morrisseymarr/mantab.sh",
+		"/home/morrisseymarr/lampstack-5.5.30-1/apache2/htdocs/CAI/tmp/f347bwxw5y8k.19xvkfwzh6xww.php",
+		"/home/morrisseymarr/workspace/ll-s-generic-ver/Selesdepselesnul/Parser.hs",
+		"/home/morrisseymarr/workspace/ll-s-generic-ver/Selesdepselesnul/Parse.hs",
+		"/home/morrisseymarr/wc-like.cpp",
+		"/home/morrisseymarr/haskell_cyn.hs",
+		"/home/morrisseymarr/lampstack-5.5.30-1/apache2/htdocs/CAI/config.ini",
+		"/home/morrisseymarr/lampstack-5.5.30-1/apache2/htdocs/CAI/ui/login.html",
+		"/home/morrisseymarr/lampstack-5.5.30-1/apache2/htdocs/CAI/ui/home.html",
+		"/home/morrisseymarr/lampstack-5.5.30-1/apache2/htdocs/CAI/ui/index.html",
+		"/home/morrisseymarr/lampstack-5.5.30-1/apache2/htdocs/CAI/app/controllers/apps/ItemAppController.php",
+		"/home/morrisseymarr/workspace/ll-s/Selesdepselesnul/Main.hs",
+		"/home/morrisseymarr/workspace/ll-s/Selesdepselesnul/LinkedList.hs",
+		"/home/morrisseymarr/lampstack-5.5.30-1/apache2/htdocs/CAI/app/controllers/RootController.php",
+		"/home/morrisseymarr/haskell_is_damn_good.hs",
+		"/home/morrisseymarr/lampstack-5.5.30-1/apache2/htdocs/CAI/ui/itemsubmitingform.html",
+		"/home/morrisseymarr/lampstack-5.5.30-1/apache2/htdocs/CAI/app/controllers/rests/ItemTransactionController.php",
+		"/home/morrisseymarr/lampstack-5.5.30-1/apache2/htdocs/CAI/app/controllers/ItemController.php",
+		"/home/morrisseymarr/lampstack-5.5.30-1/apache2/htdocs/CAI/app/controllers/ItemTransactionController.php",
+		"/home/morrisseymarr/lampstack-5.5.30-1/apache2/htdocs/CAI/app/models/Item.php",
+		"/home/morrisseymarr/lampstack-5.5.30-1/apache2/htdocs/CAI/app/Cai.php",
+		"/home/morrisseymarr/lampstack-5.5.30-1/apache2/htdocs/CAI/app/controllers/ItemFormController.php",
+		"/home/morrisseymarr/lampstack-5.5.30-1/apache2/htdocs/CAI/bodong/construct.sql",
+		"/home/morrisseymarr/lampstack-5.5.30-1/apache2/htdocs/CAI/bodong.php",
+		"/home/morrisseymarr/lampstack-5.5.30-1/apache2/htdocs/CAI/ui/jquery-2.1.4.js",
+		"/home/morrisseymarr/lampstack-5.5.30-1/apache2/htdocs/CAI/app/controllers/ItemTransactionController",
+		"/home/morrisseymarr/lampstack-5.5.30-1/apache2/htdocs/CAI/app/App.php",
+		"/home/morrisseymarr/lampstack-5.5.30-1/apache2/htdocs/CAI/lib/auth.php",
+		"/home/morrisseymarr/lampstack-5.5.30-1/apache2/htdocs/CAI/README.md",
+		"/home/morrisseymarr/lampstack-5.5.30-1/apache2/htdocs/CAI/app/models/Items.php",
+		"/home/morrisseymarr/lampstack-5.5.30-1/apache2/htdocs/CAI/lib/db/sql/mapper.php",
+		"/home/morrisseymarr/lampstack-5.5.30-1/apache2/htdocs/CAI/app/manager/App.php",
+		"/home/morrisseymarr/lampstack-5.5.30-1/apache2/htdocs/CAI/config/config.ini",
+		"/home/morrisseymarr/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
+		"/home/morrisseymarr/lampstack-5.5.30-1/apache2/htdocs/CAI/config/map.ini",
+		"/home/morrisseymarr/lampstack-5.5.30-1/apache2/htdocs/CAI/config/route.ini",
+		"/home/morrisseymarr/lampstack-5.5.30-1/apache2/htdocs/CAI/lib/db/mongo.php",
+		"/home/morrisseymarr/lampstack-5.5.30-1/apache2/htdocs/CAI/lib/base.php",
+		"/home/morrisseymarr/lampstack-5.5.30-1/apache2/htdocs/CAI/lib/db/sql.php"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"loadAllProper",
+			"id",
+			"itemId",
+			"item",
+			"e",
+			"item",
+			"td",
+			"load",
+			"{\n",
+			"    		",
+			"console",
+			"filter",
+			"BASE_API",
+			"http",
+			"item",
+			"http",
+			"loadAllProper",
+			"/\").",
+			"type-filter-class",
+			"clearForm",
+			"');\n",
+			"log",
+			"xs",
+			"loadAllItems",
+			"cocok",
+			"loadAllProperties",
+			"item-row-class",
+			"done",
+			"'",
+			"typeFilter",
+			"loadAllProperties",
+			".type-filter",
+			"typeSele",
+			"typeSelect",
+			"type-select",
+			"filter",
+			"itemRowClass",
+			"remove",
+			"typeSelect",
+			"types",
+			"index",
+			"{\n",
+			"i",
+			"item",
+			"prev",
+			"next",
+			"prev",
+			"after",
+			"before",
+			"i",
+			"x",
+			"makeOption",
+			"items",
+			"extraAction",
+			"x",
+			"name",
+			"span",
+			"function",
+			"app",
+			"		$",
+			"p",
+			"		$",
+			"function",
+			"App",
+			"app",
+			"App",
+			"app",
+			"App",
+			"app",
+			"App",
+			"app",
+			"App",
+			"app",
+			"App",
+			"app",
+			"App",
+			"app",
+			"		$",
+			"String",
+			"wordCount",
+			"id",
+			"inputPassword",
+			"td",
+			"th",
+			"makeTableRow",
+			"item",
+			"rest",
+			"zs",
+			"z",
+			"y",
+			"x",
+			"searched",
+			"x",
+			".type",
+			"uniqueLabels",
+			"labels",
+			"discount",
+			"label",
+			"\" ",
+			"type",
+			"Value",
+			"value",
+			"Value",
+			"fw",
+			"<?",
+			"item",
+			"        \n",
+			"item",
+			"if (!is_null($label))",
+			"editedItem",
+			"newItem",
+			"transaction_time",
+			"transaction_date",
+			"transaction_time",
+			"transaction_date",
+			"json",
+			"label",
+			"date",
+			".\".*'\");",
+			"f3",
+			"GET",
+			"	'",
+			"app",
+			"            $",
+			"f3",
+			"list",
+			"place",
+			"       $"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "itemsubmitinghandler.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4634,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								198,
+								198
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 22.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "untitled.sublime-project",
+	"replace":
+	{
+		"height": 40.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"model",
+				"system/core/Model.php"
+			],
+			[
+				"p",
+				"application/controllers/Page.php"
+			],
+			[
+				"tes",
+				"application/controllers/Test.php"
+			],
+			[
+				"doub",
+				"doublelinkedlist.js"
+			],
+			[
+				"ma",
+				"main.html"
+			],
+			[
+				"inve",
+				"ui/inventory.html"
+			],
+			[
+				"ite",
+				"ui/js/itemsubmitinghandler.js"
+			],
+			[
+				"app",
+				"app/controllers/AppController.php"
+			],
+			[
+				"in",
+				"ui/inventory.html"
+			],
+			[
+				"item",
+				"ui/js/itemsubmitinghandler.js"
+			],
+			[
+				"invn",
+				"ui/inventory.html"
+			],
+			[
+				"inven",
+				"ui/inventory.html"
+			],
+			[
+				"itemtra",
+				"app/models/ItemTransaction.php"
+			],
+			[
+				"logi",
+				"ui/login.html"
+			],
+			[
+				"home",
+				"ui/home.html"
+			],
+			[
+				"inde",
+				"index.php"
+			],
+			[
+				"",
+				"ui/inventory.html"
+			],
+			[
+				"mai",
+				"Selesdepselesnul/Main.hs"
+			],
+			[
+				"lin",
+				"Selesdepselesnul/LinkedList.hs"
+			],
+			[
+				"itemtr",
+				"ui/itemsubmitingform.html"
+			],
+			[
+				"iter",
+				"ui/js/itemsubmitinghandler.js"
+			],
+			[
+				"itemco",
+				"app/controllers/rests/ItemController.php"
+			],
+			[
+				"con",
+				"config.ini"
+			],
+			[
+				"items",
+				"ui/itemsubmitingform.html"
+			],
+			[
+				"ro",
+				"app/controllers/RootController.php"
+			],
+			[
+				"itemapp",
+				"app/controllers/apps/ItemAppController.php"
+			],
+			[
+				"config",
+				"config.ini"
+			],
+			[
+				"root",
+				"app/controllers/RootController.php"
+			],
+			[
+				"ide",
+				"index.php"
+			],
+			[
+				"inte",
+				"app/controllers/ItemController.php"
+			],
+			[
+				"itemfor",
+				"app/controllers/ItemFormController.php"
+			],
+			[
+				"ind",
+				"index.php"
+			],
+			[
+				"itemformco",
+				"app/controllers/ItemFormController.php"
+			],
+			[
+				"la",
+				"ui/layout.html"
+			],
+			[
+				"itemf",
+				"app/controllers/ItemFormController.php"
+			],
+			[
+				"cont",
+				"app/controllers/ItemController.php"
+			],
+			[
+				"controller",
+				"app/controllers/ItemController.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 248.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
