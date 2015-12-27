@@ -129,17 +129,30 @@
            '<span class="glyphicon glyphicon-ok" id="resubmitingButton_' 
            + itemId + '"></span>');
         } else {
+          const label = '#label_'+itemId+'_input';
+          const price = '#price_'+itemId+'_input'; 
+          const quantity = '#quantity_'+itemId+'_input';
+          const discount = '#discount_'+itemId+'_input';
+          const type = '#type_'+itemId+'_input';
           $(editorButton).replaceWith(
             '<span class="glyphicon glyphicon-pencil" id="editingButton_' 
             + itemId + '"></span>');
           console.log($('#label_'+itemId+'_input'));
           $.post( BASE_API + 'item/' + itemId + '/edit/', { 
-            label: $('#label_'+itemId+'_input').val(), 
-            price: $('#price_'+itemId+'_input').val(), 
-            quantity : $('#quantity_'+itemId+'_input').val(), 
-            discount: $('#discount_'+itemId+'_input').val(), 
-            type: $('#type_'+itemId+'_input').val() 
+            label: $(label).val(), 
+            price: $(price).val(), 
+            quantity : $(quantity).val(), 
+            discount: $(discount).val(), 
+            type: $(type).val() 
           });
+          const unwrap = function(name) {
+            return makeTableData($(name).val(), name.split()[0]+'_'+itemId);
+          };
+          $(label).replaceWith(unwrap(label));
+          $(price).replaceWith(unwrap(price));
+          $(quantity).replaceWith(unwrap(quantity));
+          $(discount).replaceWith(unwrap(discount));
+          $(type).replaceWith(unwrap(type));
           console.log($('#label_'+itemId+'_input').val());
         }
       });
