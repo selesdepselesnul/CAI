@@ -30,7 +30,7 @@ class ItemController {
         $edited_item = new Item($f3->get('DB'), $f3->get('PARAMS["id"]'));
         $label = $f3->get('POST["label"]');
         $price = $f3->get('POST["price"]');
-        $quantity = $f3->get('POST["quantiy"]');
+        $quantity = $f3->get('POST["quantity"]');
         $discount = $f3->get('POST["discount"]');
         $type = $f3->get('POST["type"]');
         
