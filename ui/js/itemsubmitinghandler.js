@@ -109,7 +109,7 @@
           const nameId = name + '_' + itemId;
           const textContent = $('#' + nameId).text(); 
           return makeTableData('<input id="' + nameId  + '_input" value="' 
-            + textContent + '" type="' + type + '"/>', nameId);
+            + textContent + '" type="' + type + '" class="form-control"/>', nameId);
         };
         
         if(editorKind === 'editingButton') {
