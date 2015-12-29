@@ -23,6 +23,13 @@ class Item extends DB\SQL\Mapper {
 			return self::getItemWhere($key, ">", $value);
 	}
 
+	public static function getItemsByPattern($key, $pattern) {
+		return Base::Instance()
+		           ->get('DB')
+		           ->exec(
+		           	"SELECT * FROM Item WHERE ".$key." LIKE '".$pattern."%'");
+	}
+
 	private static function getItemWhere($key, $operator, $value) {
 		return Base::Instance()->get('DB')->exec(
 			"SELECT * FROM Item WHERE " 

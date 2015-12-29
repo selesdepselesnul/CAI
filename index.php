@@ -24,6 +24,8 @@ class Boot {
 
 	private function initItemController() {
 		$this->app->route('GET /json/item', 'ItemController->getAll');
+		$this->app->route('GET /json/item/@key/like/@pattern', 
+			'ItemController->getItemsByPattern');
 		$this->app->route('GET /json/item/@id', 'ItemController->getItemById');
 		$this->app->route('GET /json/item/@id/remove', 'ItemController->getRemovingItemById');
 		$this->app->route('GET /json/item/@key/@operator/@value', 

@@ -57,7 +57,6 @@ class ItemController {
         $new_item->discount = $f3->get('POST["discount"]');
         $new_item->type = $f3->get('POST["type"]');
         $new_item->save();
-        echo "berhasil hore!";
     }
     
     public function getItemsByKey($f3) {
@@ -65,5 +64,11 @@ class ItemController {
         $value = $f3->get('PARAMS["value"]');
         $operator = $f3->get('PARAMS["operator"]');
         echo json_encode(Item::getItemsByKey($key, $operator, $value));
+    }
+
+    public function getItemsByPattern($f3) {
+        $key = $f3->get('PARAMS["key"]');
+        $pattern = $f3->get('PARAMS["pattern"]');
+        echo json_encode(Item::getItemsByPattern($key, $pattern));
     }
 }

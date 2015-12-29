@@ -144,5 +144,5 @@
            </div>
 
        </div>
-       <script src="{{ $UI.'js/cashier.js' }}"></script>
+       <script src="<?php echo $UI.'js/cashier.js'; ?>"></script>
        <!-- End  Kitchen Sink -->

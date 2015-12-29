@@ -9,10 +9,17 @@
 	<title><?php echo $site; ?></title>
 	<!-- BOOTSTRAP CORE STYLE  -->
 	<link href="<?php echo $UI.'css/bootstrap.min.css'; ?>" rel="stylesheet" />
-	<!-- FONT AWESOME ICONS  -->
-	<link href="<?php echo $UI.'css/font-awesome.css'; ?>" rel="stylesheet" />
+	<link href="<?php echo $UI.'css/jquery-ui.min.css'; ?>" rel="stylesheet" />
 	<!-- CUSTOM STYLE  -->
 	<link href="<?php echo $UI.'css/style.css'; ?>" rel="stylesheet" />
+
+	<!-- CORE JQUERY SCRIPTS -->
+	<script src="<?php echo $UI.'js/jquery-2.1.4.js'; ?>"></script>
+	<script src="<?php echo $UI.'js/jquery-ui.min.js'; ?>"></script>
+	<!-- BOOTSTRAP SCRIPTS  -->
+	<script src="<?php echo $UI.'js/bootstrap.min.js'; ?>"></script>
+	<!-- js handler -->
+	<script src="<?php echo $UI.'js/itemsubmitinghandler.js'; ?>"></script>
 </head>
 <body>
 	<header>
@@ -116,11 +123,6 @@
 		</footer>
 		<!-- FOOTER SECTION END-->
 
-		<!-- CORE JQUERY SCRIPTS -->
-		<script src="<?php echo $UI.'js/jquery-2.1.4.js'; ?>"></script>
-		<!-- BOOTSTRAP SCRIPTS  -->
-		<script src="<?php echo $UI.'js/bootstrap.min.js'; ?>"></script>
-		<!-- js handler -->
-		<script src="<?php echo $UI.'js/itemsubmitinghandler.js'; ?>"></script>
+		
 	</body>
 	</html>
