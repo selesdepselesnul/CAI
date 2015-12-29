@@ -1,3 +1,6 @@
+/**
+ * @author : Moch Deden (https://gihtub.com/selesdepselesnul)
+ */
 $(document).ready(function() {
 	const BASE_API = 'http://127.0.0.1:8080/CAI/json/';
 
